@@ -3,166 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Inventive Bizsol - Get in touch with us for engineering digitalization solutions, BIM services, and more">
     <title>Contact Us – Inventive Bizsol</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header" id="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Inventive<span class="highlight">Bizsol</span></span>
-                </a>
-                <ul class="nav-menu" id="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contact Us</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+    <header class="site-header">
+        <!-- Top Bar -->
+        <div class="header-top-bar">
+            <div class="header-top-container">
+                <div class="header-top-left"></div>
+                <div class="header-top-center">
+                    <a href="mailto:inquiry@inventivebizsol.com" class="email-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>inquiry@inventivebizsol.com</span>
+                    </a>
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Page Banner -->
-    <section class="page-banner">
-        <div class="banner-overlay"></div>
-        <div class="container">
-            <h1>Contact Us</h1>
-            <nav class="breadcrumb">
-                <a href="index.html">Home</a> <span>/</span> <span>Contact Us</span>
-            </nav>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section section">
-        <div class="container">
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper">
-                    <h2>Send Us a Message</h2>
-                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Your Name *</label>
-                                <input type="text" id="name" name="name" required placeholder="Enter your name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="Enter your email">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                            </div>
-                            <div class="form-group">
-                                <label for="company">Company Name</label>
-                                <input type="text" id="company" name="company" placeholder="Enter your company name">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Enter subject">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service">
-                                <option value="">Select a Service</option>
-                                <option value="engineering-digitalization">Engineering Digitalization</option>
-                                <option value="bim-services">BIM Services</option>
-                                <option value="cad-automation">CAD Automation</option>
-                                <option value="staffing-solutions">Staffing Solutions</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Enter your message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="contact-info-wrapper">
-                    <h2>Get In Touch</h2>
-                    <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-
-                    <div class="contact-cards">
-                        <div class="contact-card">
-                            <div class="contact-card-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-card-content">
-                                <h4>Our Address</h4>
-                                <p>Unit No. 901, Montreal Business Center Tower II, Pallod Farms, Sr. No. 272/3, 272/4, Pune, Maharashtra, India - 411045</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-card-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-card-content">
-                                <h4>Email Us</h4>
-                                <p><a href="mailto:inquiry@inventivebizsol.com">inquiry@inventivebizsol.com</a></p>
-                                <p><a href="mailto:info@inventivebizsol.com">info@inventivebizsol.com</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-card-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-card-content">
-                                <h4>Business Hours</h4>
-                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                                <p>Saturday - Sunday: Closed</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="social-section">
-                        <h4>Connect With Us</h4>
-                        <div class="social-links large">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+                <div class="header-top-right">
+                    <a href="https://www.linkedin.com/company/inventive-business-solutions-pvt-ltd/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
             </div>
         </div>
+
+        <!-- Main Navigation -->
+        <div class="header-main">
+            <div class="header-main-container">
+                <div class="logo-wrapper">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo-01.png" alt="Inventive Bizsol">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-menu" id="nav-menu">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link active">Contact Us</a></li>
+                    </ul>
+                    <!-- Mobile Menu Toggle -->
+                    <div class="mobile-toggle" id="hamburger">
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu-wrap" id="mobileMenu">
+            <ul class="mobile-nav-menu">
+                <li><a href="index.html" class="mobile-menu-item">Home</a></li>
+                <li><a href="about.html" class="mobile-menu-item">About Us</a></li>
+                <li><a href="services.html" class="mobile-menu-item">Services</a></li>
+                <li><a href="contact.html" class="mobile-menu-item active">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="page-hero-slide active" style="background-image: url('images/SPEED-BIM-MOBILE-VIEW-1.png')"></div>
+        <div class="page-hero-slide" style="background-image: url('images/Engineering-Services.png')"></div>
+        <div class="page-hero-slide" style="background-image: url('images/CAD-Automation.png')"></div>
+        <div class="page-hero-slide" style="background-image: url('images/Digitalization.png')"></div>
+        <div class="contact-hero-overlay">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="contact-hero-wave">
+            <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+                <path fill="#ffffff" d="M0,100 C150,180 350,0 500,100 C650,200 800,50 1000,100 C1200,150 1350,50 1440,100 L1440,200 L0,200 Z"></path>
+            </svg>
+        </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map-section">
+    <!-- Get in Touch Section -->
+    <section class="get-in-touch-section">
         <div class="container">
-            <h2 class="section-title text-center">Find Us On Map</h2>
-        </div>
-        <div class="map-wrapper">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.5676035851127!2d73.78234731489289!3d18.54868798739568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf1b1e0f1c1d%3A0x1234567890abcdef!2sMontreal%20Business%20Center!5e0!3m2!1sen!2sin!4v1234567890"
-                width="100%"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <h2 class="get-in-touch-title">Get in Touch</h2>
+            <p class="get-in-touch-subtitle">Send us a message and we'll get back to you shortly.</p>
+
+            <div class="contact-layout">
+                <!-- Contact Form Card -->
+                <div class="contact-form-card">
+                    <form class="contact-page-form" id="contact-form">
+                        <div class="form-field">
+                            <select name="service">
+                                <option value="">Select Service</option>
+                                <option value="bim-services">BIM Services</option>
+                                <option value="speed-bim">Speed BIM</option>
+                                <option value="engineering-services">Engineering Services</option>
+                                <option value="cad-automation">CAD Automation</option>
+                                <option value="digitalization">Digitalization</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <input type="email" name="email" required placeholder="Email *">
+                        </div>
+                        <div class="form-field">
+                            <textarea name="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" name="company" required placeholder="Company *">
+                        </div>
+                        <button type="submit" class="btn-send">Send</button>
+                    </form>
+                </div>
+
+                <!-- Address Card -->
+                <div class="contact-address-card">
+                    <div class="address-block">
+                        <h3 class="address-country">India</h3>
+                        <h4 class="address-company">Inventive Business Solutions</h4>
+                        <p class="address-text">3rd Floor | Guruganesh Complex | Paud Road | Bhusari Colony, Kothrud, Pune - 411038 | Maharashtra | India</p>
+                    </div>
+
+                    <div class="address-block">
+                        <h3 class="address-country">USA</h3>
+                        <h4 class="address-company">Inventive Business Solutions</h4>
+                        <p class="address-text">77 | Sugar Creek Center Blvd, #650 |<br>Sugar Land | Texas - 77478 | USA</p>
+                    </div>
+
+                    <div class="address-block">
+                        <h3 class="address-country">Australia</h3>
+                        <h4 class="address-company">Inventive Business Solutions</h4>
+                        <p class="address-text">P.O. Box 31 | Darling Heights | Qld 4350 | Australia</p>
+                        <p class="address-email"><strong>Email:</strong> <a href="mailto:inquiry@inventivebizsol.com">inquiry@inventivebizsol.com</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -170,13 +144,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 class="footer-title">Inventive Bizsol</h3>
-                    <p class="footer-tagline">Inventive With You</p>
-                    <p>Engineering Digitalization Solutions for EPCs and OEMs, ensuring efficient project completion and plant lifecycle management.</p>
+                <div class="footer-col footer-about">
+                    <img src="images/logo-01.png" alt="Inventive Bizsol" class="footer-logo">
+                    <p class="footer-tagline">Continuously drive progress by embracing modern technologies and creative solutions to enhance engineering design and automation.</p>
                 </div>
                 <div class="footer-col">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
@@ -185,32 +158,42 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3 class="footer-title">Our Services</h3>
+                    <h4 class="footer-heading">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html#digitalization">Engineering Digitalization</a></li>
-                        <li><a href="services.html#bim">BIM Services</a></li>
-                        <li><a href="services.html#cad">CAD Automation</a></li>
-                        <li><a href="services.html#staffing">Staffing Solutions</a></li>
+                        <li><a href="services.html#bim-services">BIM Services</a></li>
+                        <li><a href="services.html#speed-bim">Speed BIM</a></li>
+                        <li><a href="services.html#engineering-services">Engineering Services</a></li>
+                        <li><a href="services.html#cad-automation">CAD Automation</a></li>
+                        <li><a href="services.html#digitalization">Digitalization</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3 class="footer-title">Contact Info</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Unit No. 901, Montreal Business Center Tower II, Pallod Farms, Sr. No. 272/3, 272/4, Pune, Maharashtra, India - 411045</li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:inquiry@inventivebizsol.com">inquiry@inventivebizsol.com</a></li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <p class="footer-email">inquiry@inventivebizsol.com</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/inventive-business-solutions-pvt-ltd" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Inventive Bizsol. All Rights Reserved.</p>
+                <p>&copy;Copyright Inventive 2024. All right reserved. Developed by <a href="https://coalbrass.com" target="_blank">coalbrass.com</a></p>
+                <div class="autodesk-badge">
+                    <img src="images/11.png" alt="Autodesk Authorized Developer">
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Fixed Autodesk Badge -->
+    <div class="fixed-autodesk-badge">
+        <img src="images/11.png" alt="Autodesk Authorized Developer">
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="js/script.js"></script>
 </body>

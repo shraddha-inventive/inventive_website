@@ -3,204 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Inventive Bizsol - Learn about our company, mission, and expertise in engineering digitalization solutions">
     <title>About Us – Inventive Bizsol</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header" id="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Inventive<span class="highlight">Bizsol</span></span>
-                </a>
-                <ul class="nav-menu" id="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link active">About Us</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+    <header class="site-header">
+        <!-- Top Bar -->
+        <div class="header-top-bar">
+            <div class="header-top-container">
+                <div class="header-top-left"></div>
+                <div class="header-top-center">
+                    <a href="mailto:inquiry@inventivebizsol.com" class="email-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>inquiry@inventivebizsol.com</span>
+                    </a>
                 </div>
-            </nav>
+                <div class="header-top-right">
+                    <a href="https://www.linkedin.com/company/inventive-business-solutions-pvt-ltd/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="header-main">
+            <div class="header-main-container">
+                <div class="logo-wrapper">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo-01.png" alt="Inventive Bizsol">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-menu" id="nav-menu">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link active">About Us</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    </ul>
+                    <!-- Mobile Menu Toggle -->
+                    <div class="mobile-toggle" id="hamburger">
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu-wrap" id="mobileMenu">
+            <ul class="mobile-nav-menu">
+                <li><a href="index.html" class="mobile-menu-item">Home</a></li>
+                <li><a href="about.html" class="mobile-menu-item active">About Us</a></li>
+                <li><a href="services.html" class="mobile-menu-item">Services</a></li>
+                <li><a href="contact.html" class="mobile-menu-item">Contact Us</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Page Banner -->
-    <section class="page-banner">
-        <div class="banner-overlay"></div>
-        <div class="container">
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="page-hero-slide active" style="background-image: url('images/SPEED-BIM-MOBILE-VIEW-1.png')"></div>
+        <div class="page-hero-slide" style="background-image: url('images/Engineering-Services.png')"></div>
+        <div class="page-hero-slide" style="background-image: url('images/CAD-Automation.png')"></div>
+        <div class="page-hero-slide" style="background-image: url('images/Digitalization.png')"></div>
+        <div class="about-hero-overlay">
             <h1>About Us</h1>
-            <nav class="breadcrumb">
-                <a href="index.html">Home</a> <span>/</span> <span>About Us</span>
-            </nav>
+        </div>
+        <div class="about-hero-wave">
+            <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+                <path fill="#ffffff" d="M0,64 C120,100 240,20 360,64 C480,108 600,20 720,64 C840,108 960,20 1080,64 C1200,108 1320,20 1440,64 L1440,150 L0,150 Z"></path>
+            </svg>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-main section">
+    <!-- About Content Section -->
+    <section class="about-content-section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="image-placeholder large">
-                        <i class="fas fa-industry"></i>
-                    </div>
+            <div class="about-content-grid">
+                <div class="about-content-text">
+                    <h2 class="about-content-title">About Us</h2>
+                    <p><strong>Founded in 2011,</strong> Inventive has been at the forefront of innovation in the engineering design industry, serving esteemed brands both in India and across the globe, including clients in the US, Europe, and Australia. Our commitment to excellence is driven by the application of <strong>new-age technologies</strong> within the real estate and plant engineering domains, continuously enhancing the accuracy and speed of engineering design to minimize project delays and reduce the costs associated with poor design.</p>
+                    <p>As an <strong>Autodesk Development Partner,</strong> we leverage cutting-edge tools and technologies to automate engineering design and drafting processes. Our expertise in <strong>BIM, CAD automation and Engineering Digitalization</strong> stands as a testament to our strength, enabling us to deliver unique services & solutions in BIM and Plant Engineering.</p>
                 </div>
-                <div class="about-content">
-                    <h2 class="section-title">Who We Are</h2>
-                    <p class="tagline">Inventive With You</p>
-                    <p>Inventive Bizsol is a leading provider of engineering digitalization solutions, serving EPCs (Engineering, Procurement, and Construction companies) and OEMs (Original Equipment Manufacturers) across the globe.</p>
-                    <p>We address the critical challenge of updating as-built engineering documents and ensuring their handover in an easily accessible format. Our solutions are crucial for both project completion and the entire plant life cycle.</p>
-                    <p>With our expertise in digital twin technology, BIM services, and CAD automation, we help organizations transform their engineering processes for greater efficiency and accuracy.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Vision Section -->
-    <section class="mission-vision section">
-        <div class="container">
-            <div class="mv-grid">
-                <div class="mv-card">
-                    <div class="mv-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>To provide innovative and cost-effective engineering digitalization solutions that enable organizations to streamline their engineering processes, improve collaboration, and achieve operational excellence throughout the plant lifecycle.</p>
-                </div>
-                <div class="mv-card">
-                    <div class="mv-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>To be the global leader in engineering digitalization, empowering EPCs and OEMs with cutting-edge digital twin technology and BIM solutions that transform the way engineering projects are designed, documented, and managed.</p>
-                </div>
-                <div class="mv-card">
-                    <div class="mv-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Our Values</h3>
-                    <p>Innovation, Integrity, Excellence, and Customer Focus drive everything we do. We believe in building lasting partnerships with our clients through quality deliverables and exceptional service.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What We Do Section -->
-    <section class="what-we-do section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What We Do</h2>
-                <p class="section-subtitle">Comprehensive Engineering Digitalization Services</p>
-            </div>
-            <div class="wwd-grid">
-                <div class="wwd-item">
-                    <div class="wwd-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <div class="wwd-content">
-                        <h4>Digital Twin Creation</h4>
-                        <p>Web-enabled P&ID linked Plant Asset's Digital Twin creation, ensuring faster and cost-effective creation of plant digital twins with centralized storage of engineering documents.</p>
-                    </div>
-                </div>
-                <div class="wwd-item">
-                    <div class="wwd-icon">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                    <div class="wwd-content">
-                        <h4>3D Visualization</h4>
-                        <p>P&ID linked 3D visualization and navigation of the plant for users across the organization, enabling better understanding and collaboration.</p>
-                    </div>
-                </div>
-                <div class="wwd-item">
-                    <div class="wwd-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="wwd-content">
-                        <h4>Document Management</h4>
-                        <p>Centralized storage and management of engineering documents, ensuring easy access and handover in an accessible format.</p>
-                    </div>
-                </div>
-                <div class="wwd-item">
-                    <div class="wwd-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <div class="wwd-content">
-                        <h4>As-Built Updates</h4>
-                        <p>Efficient updating of as-built engineering documents throughout the project completion and plant life cycle.</p>
+                <div class="about-content-video">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/1013157421?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Inventive About us Video"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-us section alt-bg">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose Inventive Bizsol</h2>
-                <p class="section-subtitle">Your Trusted Partner in Engineering Digitalization</p>
+    <!-- Our Mission Section -->
+    <section class="mission-section">
+        <div class="mission-bg" style="background-image: url('images/Digitalization.png')"></div>
+        <div class="mission-overlay">
+            <div class="container">
+                <h2 class="mission-title">Our Mission</h2>
+                <p class="mission-text">Empower our customers with scalable solutions by leveraging cutting-edge technologies and CAD automation in engineering design to enhance accuracy, speed, and efficiency, thereby reducing project delays, costs associated with poor design and eliminating reliance on person-based skills, ensuring consistent quality and reliability in every project</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="values-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-cog"></i>
                     </div>
-                    <h4>Industry Expertise</h4>
-                    <p>Deep domain knowledge in engineering, construction, and manufacturing industries with years of experience.</p>
+                    <h3 class="value-name">Excellence</h3>
+                    <p class="value-desc">Committed to delivering the highest quality services, ensuring accuracy, efficiency and consistency in every project.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h4>Innovation Driven</h4>
-                    <p>Continuously developing in-house tools and solutions to enhance productivity and deliver better results.</p>
+                    <h3 class="value-name">Innovation</h3>
+                    <p class="value-desc">Continuously drive progress by embracing modern technologies and creative solutions to enhance engineering design and automation.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-dollar-sign"></i>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h4>Cost Effective</h4>
-                    <p>Delivering high-quality solutions at competitive prices without compromising on quality or timelines.</p>
+                    <h3 class="value-name">Adaptability</h3>
+                    <p class="value-desc">Remain flexible and responsive to the changing needs of the industry and our clients, keeping them ahead of the competition.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-users-cog"></i>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h4>Skilled Team</h4>
-                    <p>Highly trained professionals with expertise in Revit, Navisworks, AutoCAD, and other industry-standard tools.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h4>Dedicated Support</h4>
-                    <p>Committed customer support ensuring smooth project execution and prompt resolution of queries.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h4>Global Delivery</h4>
-                    <p>Serving clients worldwide with flexible engagement models including onsite and offsite delivery.</p>
+                    <h3 class="value-name">Integrity</h3>
+                    <p class="value-desc">Uphold honesty, transparency, and ethical practices in all our business dealings, fostering trust and long-term partnerships.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Client Logos Carousel Section -->
+    <section class="about-clients-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Partner With Us</h2>
-                <p>Let's work together to transform your engineering processes with our innovative digital solutions.</p>
-                <a href="contact.html" class="btn btn-white">Get In Touch</a>
+            <div class="about-clients-wrapper">
+                <div class="about-clients-track" id="clientsTrack">
+                    <div class="about-clients-slide active">
+                        <img src="images/15.png" alt="OsmoFlo">
+                        <img src="images/14.png" alt="NALCO">
+                        <img src="images/13.png" alt="thyssenkrupp">
+                        <img src="images/9.png" alt="Tetra Pak">
+                        <img src="images/8.png" alt="TAS">
+                    </div>
+                    <div class="about-clients-slide">
+                        <img src="images/6.png" alt="Thermax">
+                        <img src="images/7.png" alt="Europem">
+                        <img src="images/10-1.png" alt="GAIL">
+                        <img src="images/1.png" alt="Bharat Petroleum">
+                        <img src="images/3.png" alt="Praj">
+                    </div>
+                    <div class="about-clients-slide">
+                        <img src="images/4.png" alt="MNGL">
+                        <img src="images/5.png" alt="Aquatech">
+                        <img src="images/verstraete-LOGO-FOR-HOME-PAGE.png" alt="Verstraete">
+                        <img src="images/2.png" alt="SMS Group">
+                        <img src="images/15.png" alt="OsmoFlo">
+                    </div>
+                </div>
+                <div class="about-clients-dots" id="clientsDots">
+                    <span class="client-dot active" data-slide="0"></span>
+                    <span class="client-dot" data-slide="1"></span>
+                    <span class="client-dot" data-slide="2"></span>
+                </div>
             </div>
         </div>
     </section>
@@ -209,13 +188,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 class="footer-title">Inventive Bizsol</h3>
-                    <p class="footer-tagline">Inventive With You</p>
-                    <p>Engineering Digitalization Solutions for EPCs and OEMs, ensuring efficient project completion and plant lifecycle management.</p>
+                <div class="footer-col footer-about">
+                    <img src="images/logo-01.png" alt="Inventive Bizsol" class="footer-logo">
+                    <p class="footer-tagline">Continuously drive progress by embracing modern technologies and creative solutions to enhance engineering design and automation.</p>
                 </div>
                 <div class="footer-col">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
@@ -224,32 +202,42 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3 class="footer-title">Our Services</h3>
+                    <h4 class="footer-heading">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html#digitalization">Engineering Digitalization</a></li>
-                        <li><a href="services.html#bim">BIM Services</a></li>
-                        <li><a href="services.html#cad">CAD Automation</a></li>
-                        <li><a href="services.html#staffing">Staffing Solutions</a></li>
+                        <li><a href="services.html#bim-services">BIM Services</a></li>
+                        <li><a href="services.html#speed-bim">Speed BIM</a></li>
+                        <li><a href="services.html#engineering-services">Engineering Services</a></li>
+                        <li><a href="services.html#cad-automation">CAD Automation</a></li>
+                        <li><a href="services.html#digitalization">Digitalization</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3 class="footer-title">Contact Info</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Unit No. 901, Montreal Business Center Tower II, Pallod Farms, Sr. No. 272/3, 272/4, Pune, Maharashtra, India - 411045</li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:inquiry@inventivebizsol.com">inquiry@inventivebizsol.com</a></li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <p class="footer-email">inquiry@inventivebizsol.com</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/inventive-business-solutions-pvt-ltd" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@aboratoryI" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Inventive Bizsol. All Rights Reserved.</p>
+                <p>&copy;Copyright Inventive 2024. All right reserved. Developed by <a href="https://coalbrass.com" target="_blank">coalbrass.com</a></p>
+                <div class="autodesk-badge">
+                    <img src="images/11.png" alt="Autodesk Authorized Developer">
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Fixed Autodesk Badge -->
+    <div class="fixed-autodesk-badge">
+        <img src="images/11.png" alt="Autodesk Authorized Developer">
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="js/script.js"></script>
 </body>

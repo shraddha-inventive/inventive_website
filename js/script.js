@@ -1,62 +1,158 @@
 // ===== DOM Elements =====
-const header = document.getElementById('header');
 const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+const mobileMenu = document.getElementById('mobileMenu');
+const navLinks = document.querySelectorAll('.nav-link, .mobile-menu-item');
+const scrollToTopBtn = document.getElementById('scrollToTop');
 const contactForm = document.getElementById('contact-form');
+const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
 
 // ===== Mobile Menu Toggle =====
-if (hamburger && navMenu) {
+if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Close menu when clicking a nav link
+    // Close menu when clicking a nav link (except dropdown toggles)
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+        if (!link.classList.contains('mobile-dropdown-toggle')) {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
             hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
         }
     });
 }
 
-// ===== Header Scroll Effect =====
-let lastScroll = 0;
+// ===== Mobile Dropdown Toggle =====
+mobileDropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parent = toggle.parentElement;
+        parent.classList.toggle('active');
+    });
+});
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+// Close mobile dropdown submenu items
+document.querySelectorAll('.mobile-dropdown-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
 
-    // Add scrolled class for shadow effect
-    if (currentScroll > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+// ===== Hero Slider =====
+const slides = document.querySelectorAll('.slide');
+const sliderDots = document.querySelectorAll('.slider-dot');
+const prevBtn = document.querySelector('.slider-prev');
+const nextBtn = document.querySelector('.slider-next');
+let currentSlide = 0;
+let slideInterval;
+
+function showSlide(index) {
+    // Handle wraparound
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
+
+    currentSlide = index;
+
+    // Update slides
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === currentSlide) {
+            slide.classList.add('active');
+        }
+    });
+
+    // Update dots
+    sliderDots.forEach((dot, i) => {
+        dot.classList.remove('active');
+        if (i === currentSlide) {
+            dot.classList.add('active');
+        }
+    });
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+
+function startSlideshow() {
+    slideInterval = setInterval(nextSlide, 5000);
+}
+
+function stopSlideshow() {
+    clearInterval(slideInterval);
+}
+
+// Initialize slider if elements exist
+if (slides.length > 0) {
+    // Navigation buttons
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            stopSlideshow();
+            nextSlide();
+            startSlideshow();
+        });
     }
 
-    lastScroll = currentScroll;
-});
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            stopSlideshow();
+            prevSlide();
+            startSlideshow();
+        });
+    }
+
+    // Dot navigation
+    sliderDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopSlideshow();
+            showSlide(index);
+            startSlideshow();
+        });
+    });
+
+    // Start automatic slideshow
+    startSlideshow();
+}
+
+// ===== Page Hero Background Slider (inner pages) =====
+const pageHeroSlides = document.querySelectorAll('.page-hero-slide');
+if (pageHeroSlides.length > 0) {
+    let currentPageSlide = 0;
+    setInterval(() => {
+        pageHeroSlides[currentPageSlide].classList.remove('active');
+        currentPageSlide = (currentPageSlide + 1) % pageHeroSlides.length;
+        pageHeroSlides[currentPageSlide].classList.add('active');
+    }, 5000);
+}
 
 // ===== Smooth Scroll for Anchor Links =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         if (href !== '#') {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-                const headerHeight = header.offsetHeight;
+                const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
                 const targetPosition = target.offsetTop - headerHeight - 20;
 
                 window.scrollTo({
@@ -68,6 +164,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ===== Scroll to Top Button =====
+if (scrollToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 // ===== Contact Form Handling =====
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -77,7 +191,7 @@ if (contactForm) {
         const originalText = submitBtn.innerHTML;
 
         // Add loading state
-        submitBtn.classList.add('loading');
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
 
         // Get form data
@@ -87,15 +201,14 @@ if (contactForm) {
             data[key] = value;
         });
 
-        // Simulate form submission (replace with actual API call)
+        // Simulate form submission
         setTimeout(() => {
             // Remove loading state
-            submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalText;
 
             // Show success message
-            showFormMessage('success', 'Thank you for your message! We will get back to you soon.');
+            alert('Thank you for your message! We will get back to you soon.');
 
             // Reset form
             contactForm.reset();
@@ -103,153 +216,12 @@ if (contactForm) {
     });
 }
 
-// ===== Form Message Display =====
-function showFormMessage(type, message) {
-    // Remove existing messages
-    const existingMessage = document.querySelector('.form-success, .form-error');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-
-    // Create message element
-    const messageDiv = document.createElement('div');
-    messageDiv.className = type === 'success' ? 'form-success' : 'form-error';
-    messageDiv.innerHTML = `<p>${message}</p>`;
-
-    // Insert after form
-    contactForm.parentNode.insertBefore(messageDiv, contactForm.nextSibling);
-
-    // Remove message after 5 seconds
-    setTimeout(() => {
-        messageDiv.remove();
-    }, 5000);
-}
-
-// ===== Scroll to Top Button =====
-const scrollTopBtn = document.createElement('button');
-scrollTopBtn.className = 'scroll-top';
-scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
-document.body.appendChild(scrollTopBtn);
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollTopBtn.classList.add('visible');
-    } else {
-        scrollTopBtn.classList.remove('visible');
-    }
-});
-
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// ===== Animate Elements on Scroll =====
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.service-card, .feature-item, .mv-card, .wwd-item, .bim-service-card, .contact-card');
-
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-
-        if (elementTop < window.innerHeight - elementVisible) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }
-    });
-};
-
-// Set initial state for animated elements
-document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.service-card, .feature-item, .mv-card, .wwd-item, .bim-service-card, .contact-card');
-
-    elements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    });
-
-    // Trigger initial check
-    animateOnScroll();
-});
-
-window.addEventListener('scroll', animateOnScroll);
-
-// ===== Active Navigation Link Based on Scroll Position =====
-const sections = document.querySelectorAll('section[id]');
-
-const highlightNavLink = () => {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 150;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(sectionId)) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-};
-
-window.addEventListener('scroll', highlightNavLink);
-
-// ===== Form Validation =====
-const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-};
-
-const validatePhone = (phone) => {
-    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-    return phone === '' || re.test(phone);
-};
-
-// Add real-time validation
-if (contactForm) {
-    const emailInput = contactForm.querySelector('#email');
-    const phoneInput = contactForm.querySelector('#phone');
-
-    if (emailInput) {
-        emailInput.addEventListener('blur', function() {
-            if (this.value && !validateEmail(this.value)) {
-                this.style.borderColor = '#dc3545';
-            } else {
-                this.style.borderColor = '';
-            }
-        });
-    }
-
-    if (phoneInput) {
-        phoneInput.addEventListener('blur', function() {
-            if (!validatePhone(this.value)) {
-                this.style.borderColor = '#dc3545';
-            } else {
-                this.style.borderColor = '';
-            }
-        });
-    }
-}
-
-// ===== Preloader (Optional) =====
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
-
 // ===== Service Hash Navigation =====
 if (window.location.hash) {
     setTimeout(() => {
         const target = document.querySelector(window.location.hash);
         if (target) {
-            const headerHeight = header.offsetHeight;
+            const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
             const targetPosition = target.offsetTop - headerHeight - 20;
 
             window.scrollTo({
@@ -260,16 +232,137 @@ if (window.location.hash) {
     }, 100);
 }
 
-// ===== Keyboard Navigation Support =====
+// ===== Keyboard Navigation =====
 document.addEventListener('keydown', (e) => {
     // Escape key closes mobile menu
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
         hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
+    }
+
+    // Arrow keys for slider
+    if (slides.length > 0) {
+        if (e.key === 'ArrowLeft') {
+            stopSlideshow();
+            prevSlide();
+            startSlideshow();
+        } else if (e.key === 'ArrowRight') {
+            stopSlideshow();
+            nextSlide();
+            startSlideshow();
+        }
     }
 });
 
-// ===== Console Welcome Message =====
-console.log('%c Inventive Bizsol ', 'background: #046bd2; color: white; font-size: 20px; padding: 10px;');
-console.log('%c Inventive With You ', 'color: #1e3a5f; font-size: 14px;');
+// ===== Pause slider on hover =====
+const sliderContainer = document.querySelector('.hero-slider');
+if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', stopSlideshow);
+    sliderContainer.addEventListener('mouseleave', startSlideshow);
+}
+
+// ===== Touch Swipe for Slider =====
+let touchStartX = 0;
+let touchEndX = 0;
+
+if (sliderContainer) {
+    sliderContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    sliderContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+        stopSlideshow();
+        if (diff > 0) {
+            // Swiped left - next slide
+            nextSlide();
+        } else {
+            // Swiped right - previous slide
+            prevSlide();
+        }
+        startSlideshow();
+    }
+}
+
+// ===== About Page Clients Carousel =====
+const clientsTrack = document.getElementById('clientsTrack');
+const clientsDots = document.getElementById('clientsDots');
+
+if (clientsTrack && clientsDots) {
+    const clientSlides = clientsTrack.querySelectorAll('.about-clients-slide');
+    const dots = clientsDots.querySelectorAll('.client-dot');
+    let currentClientSlide = 0;
+
+    function showClientSlide(index) {
+        clientSlides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        currentClientSlide = index;
+        clientSlides[currentClientSlide].classList.add('active');
+        dots[currentClientSlide].classList.add('active');
+    }
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => showClientSlide(i));
+    });
+
+    setInterval(() => {
+        showClientSlide((currentClientSlide + 1) % clientSlides.length);
+    }, 4000);
+}
+
+// ===== Video Modal =====
+const videoModal = document.getElementById('videoModal');
+const openVideoBtn = document.getElementById('openVideoModal');
+const closeVideoBtn = document.getElementById('closeVideoModal');
+const videoModalIframe = document.getElementById('videoModalIframe');
+const vimeoVideoSrc = 'https://player.vimeo.com/video/1013157421?badge=0&autopause=0&player_id=0&app_id=58479';
+
+if (openVideoBtn && videoModal) {
+    openVideoBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        videoModalIframe.src = vimeoVideoSrc;
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeVideoBtn.addEventListener('click', () => {
+        videoModal.classList.remove('active');
+        videoModalIframe.src = '';
+        document.body.style.overflow = '';
+    });
+
+    videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+            videoModal.classList.remove('active');
+            videoModalIframe.src = '';
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// ===== Animate elements on scroll =====
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.service-card, .about-content, .footer-col');
+
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('animate-in');
+        }
+    });
+};
+
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);

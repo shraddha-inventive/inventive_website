@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Zone.Identifier files (WSL)
+*:Zone.Identifier
+
+# Temporary Office files
+~$*
+
+# Word documents
+*.docx
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+
+# Duplicate root-level images (already in images/)
+/AI_solutions.jpg
+/divider-bg.jpg

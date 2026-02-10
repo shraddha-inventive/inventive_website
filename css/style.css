@@ -348,6 +348,347 @@ img {
     color: var(--primary-color);
 }
 
+/* ===== Palantir-style Hero Section ===== */
+.palantir-hero {
+    background-color: #1C1C1C;
+    padding: 140px 0 80px;
+    margin-top: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Dark overlay for subtle shadow effect */
+.palantir-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.palantir-hero-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding-left: max(40px, calc((100vw - 1400px) / 2 + 40px));
+    gap: 40px;
+}
+
+.palantir-hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.palantir-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.palantir-hero-text {
+    flex: 0 0 40%;
+    max-width: 520px;
+}
+
+.palantir-hero-heading {
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.palantir-hero-subheading {
+    font-family: var(--font-secondary);
+    font-size: 1.15rem;
+    color: #A0A0A0;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.palantir-hero-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 14px 32px;
+    border: 1.5px solid #FFFFFF;
+    border-radius: 0;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.palantir-hero-btn:hover {
+    background-color: #FFFFFF;
+    color: #1C1C1C;
+}
+
+.palantir-hero-video {
+    flex: 0 0 50%;
+}
+
+.palantir-video-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.palantir-video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* ===== Solutions Page Hero (Palantir-style) ===== */
+.solutions-hero-section {
+    position: relative;
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Video positioned on the right side, sticking to right edge */
+.solutions-hero-video-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    z-index: 0;
+}
+
+.solutions-hero-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    display: block;
+}
+
+/* Thin dark overlay across entire section */
+.solutions-hero-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0a0a0a 30%, rgba(10, 10, 10, 0.7) 55%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Text content on the left */
+.solutions-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+    padding: 160px 0 100px;
+    margin-left: max(40px, calc((100vw - 1400px) / 2 + 40px));
+}
+
+.solutions-hero-heading {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.1;
+    margin-bottom: 28px;
+    letter-spacing: -0.5px;
+}
+
+.solutions-hero-subtext {
+    font-family: var(--font-secondary);
+    font-size: 1.15rem;
+    color: #999999;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* Responsive - Solutions Hero */
+@media (max-width: 1024px) {
+    .solutions-hero-section {
+        min-height: 85vh;
+    }
+
+    .solutions-hero-content {
+        margin-left: 40px;
+        padding: 140px 0 80px;
+    }
+
+    .solutions-hero-heading {
+        font-size: 3.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .solutions-hero-section {
+        min-height: auto;
+        flex-direction: column;
+    }
+
+    .solutions-hero-video-bg {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        order: 2;
+    }
+
+    .solutions-hero-dark-overlay {
+        background: linear-gradient(180deg, #0a0a0a 0%, rgba(10, 10, 10, 0.85) 40%, rgba(0, 0, 0, 0.3) 100%);
+    }
+
+    .solutions-hero-content {
+        position: relative;
+        margin-left: 0;
+        padding: 120px 20px 40px;
+        text-align: center;
+        max-width: 100%;
+        order: 1;
+    }
+
+    .solutions-hero-heading {
+        font-size: 2.4rem;
+    }
+
+    .solutions-hero-subtext {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .solutions-hero-content {
+        padding: 100px 15px 30px;
+    }
+
+    .solutions-hero-heading {
+        font-size: 2rem;
+    }
+
+    .solutions-hero-subtext {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+
+    .solutions-hero-video-bg {
+        height: 220px;
+    }
+}
+
+/* ===== Hero Section Divider ===== */
+.hero-section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 40px;
+    background: url('../images/divider-bg.jpg') center/cover no-repeat;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    max-width: 500px;
+}
+
+.divider-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--primary-color);
+    font-size: 0.7rem;
+    border: 1px solid rgba(14, 165, 233, 0.4);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-section-divider {
+        padding: 20px 20px;
+        gap: 15px;
+    }
+
+    .divider-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 0.55rem;
+    }
+}
+
+/* ===== Section Divider with Background Image ===== */
+.section-divider-light {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 40px;
+    background: url('../images/AI_solutions.jpg') center/cover no-repeat;
+    overflow: hidden;
+}
+
+.section-divider-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 10, 20, 0.55);
+    z-index: 1;
+}
+
+.divider-light-line {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    height: 2px;
+    max-width: 600px;
+    background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+@media (max-width: 768px) {
+    .section-divider-light {
+        padding: 30px 20px;
+    }
+}
+
+/* ===== Section Divider Between Hero & Slider ===== */
+.section-divider-black {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 40px;
+    background-color: #000000;
+}
+
+.section-divider-black .divider-line {
+    flex: 1;
+    height: 2px;
+    max-width: 600px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    box-shadow: 0 0 8px rgba(14, 165, 233, 0.4);
+}
+
 /* ===== Hero Slider ===== */
 .hero-slider {
     position: relative;
@@ -539,6 +880,84 @@ img {
     border-top: 1px solid var(--border-color);
 }
 
+/* Tab Navigation */
+.services-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--border-color);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-tab {
+    flex: 1;
+    padding: 14px 30px;
+    background: none;
+    border: none;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.services-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    border-radius: 2px;
+}
+
+.services-tab:hover {
+    color: var(--text-dark);
+}
+
+.services-tab.active {
+    color: var(--text-dark);
+}
+
+.services-tab.active::after {
+    background-color: var(--primary-color);
+}
+
+/* Tab Panels */
+.services-tab-panel {
+    display: none;
+}
+
+.services-tab-panel.active {
+    display: block;
+    animation: tabFadeIn 0.4s ease;
+}
+
+@keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Font Awesome icon variant for solution cards */
+.service-icon-fa {
+    background: linear-gradient(135deg, var(--bg-darker), var(--white));
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+}
+
+.service-icon-fa i {
+    font-size: 3.2rem;
+    color: var(--primary-color);
+}
+
 .section-title {
     text-align: center;
     font-family: var(--font-heading);
@@ -639,10 +1058,10 @@ img {
 
 /* ===== Clients Section ===== */
 .clients-section {
-    background-color: var(--white);
+    background-color: #C5D8E6;
     padding: 60px 0;
     overflow: hidden;
-    border-top: 1px solid var(--border-color);
+    border-top: none;
 }
 
 .clients-track {
@@ -1495,8 +1914,8 @@ img {
 /* About Clients Section */
 .about-clients-section {
     padding: 60px 0;
-    background-color: var(--white);
-    border-top: 1px solid var(--border-color);
+    background-color: #C5D8E6;
+    border-top: none;
     overflow: hidden;
 }
 
@@ -2474,6 +2893,35 @@ img {
 }
 
 @media (max-width: 920px) {
+    .palantir-hero {
+        padding: 110px 0 60px;
+    }
+
+    .palantir-hero-inner {
+        padding-left: 25px;
+        gap: 30px;
+    }
+
+    .palantir-hero-container {
+        padding: 0 25px;
+    }
+
+    .palantir-hero-content {
+        gap: 40px;
+    }
+
+    .palantir-hero-heading {
+        font-size: 2.8rem;
+    }
+
+    .palantir-hero-text {
+        flex: 0 0 50%;
+    }
+
+    .palantir-hero-video {
+        flex: 0 0 45%;
+    }
+
     .nav-menu {
         display: none;
     }
@@ -2558,6 +3006,57 @@ img {
 }
 
 @media (max-width: 768px) {
+    .palantir-hero {
+        padding: 100px 0 0;
+    }
+
+    .palantir-hero-inner {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 0;
+        gap: 35px;
+    }
+
+    .palantir-hero-container {
+        padding: 0 20px;
+    }
+
+    .palantir-hero-content {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .palantir-hero-text {
+        flex: none;
+        max-width: 100%;
+        text-align: center;
+        padding-right: 20px;
+    }
+
+    .palantir-hero-heading {
+        font-size: 2.4rem;
+    }
+
+    .palantir-hero-subheading {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .palantir-hero-video {
+        flex: none;
+        width: 100%;
+    }
+
+    .solutions-hero-video {
+        flex: none;
+        width: 100%;
+    }
+
+    .solutions-hero-video .palantir-video-wrapper,
+    .solutions-hero-video .palantir-video-wrapper video {
+        border-radius: 4px 4px 0 0;
+    }
+
     .header-top-bar {
         padding: 6px 0;
     }
@@ -2634,6 +3133,21 @@ img {
 
     .services-section {
         padding: 50px 0;
+    }
+
+    .services-tabs {
+        max-width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .services-tab {
+        font-size: 1rem;
+        padding: 10px 15px;
+        letter-spacing: 2px;
+    }
+
+    .service-icon-fa i {
+        font-size: 2.2rem;
     }
 
     .section-title {
@@ -2822,6 +3336,37 @@ img {
 }
 
 @media (max-width: 480px) {
+    .palantir-hero {
+        padding: 85px 0 0;
+    }
+
+    .palantir-hero-inner {
+        padding-left: 15px;
+        gap: 25px;
+    }
+
+    .palantir-hero-text {
+        padding-right: 15px;
+    }
+
+    .palantir-hero-container {
+        padding: 0 15px;
+    }
+
+    .palantir-hero-heading {
+        font-size: 1.9rem;
+    }
+
+    .palantir-hero-subheading {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+
+    .palantir-hero-btn {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+
     .container {
         padding: 0 15px;
     }
@@ -2880,6 +3425,20 @@ img {
 
     .services-section {
         padding: 40px 0;
+    }
+
+    .services-tabs {
+        margin-bottom: 25px;
+    }
+
+    .services-tab {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .service-icon-fa i {
+        font-size: 1.8rem;
     }
 
     .section-title {
@@ -3190,5 +3749,401 @@ img {
     .scroll-to-top {
         bottom: 60px;
         right: 10px;
+    }
+}
+
+/* ===== Solutions Page – EIT Sections ===== */
+
+/* Shared Section Title */
+.sol-section-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sol-section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+/* Offering Category */
+.sol-offering-section {
+    padding: 60px 0;
+    background-color: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+}
+
+.sol-offering-box {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sol-offering-label {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.sol-offering-name {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.sol-offering-desc {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Problem We Solve */
+.sol-problem-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.sol-problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.sol-problem-card {
+    background-color: var(--bg-darker);
+    border-radius: 12px;
+    padding: 35px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.sol-problem-card:hover {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-md);
+}
+
+.sol-problem-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sol-problem-icon i {
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+.sol-problem-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+}
+
+.sol-problem-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sol-problem-card ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 12px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.sol-problem-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+/* Solution Approach */
+.sol-approach-section {
+    padding: 80px 0;
+    background-color: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+}
+
+.sol-approach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.sol-approach-step {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.sol-approach-step:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.sol-approach-num {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.sol-approach-step p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.sol-approach-note {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Key Capabilities */
+.sol-capabilities-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.sol-cap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.sol-cap-card {
+    background-color: var(--bg-darker);
+    border-radius: 12px;
+    padding: 35px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.sol-cap-card:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.sol-cap-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sol-cap-icon i {
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+.sol-cap-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.sol-cap-card p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Inputs & Outputs */
+.sol-io-section {
+    padding: 80px 0;
+    background-color: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+}
+
+.sol-io-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.sol-io-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 35px;
+    border: 1px solid var(--border-color);
+}
+
+.sol-io-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sol-io-card h3 i {
+    font-size: 1.1rem;
+}
+
+.sol-io-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sol-io-card ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 14px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.sol-io-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* Solutions Page Responsive */
+@media (max-width: 1024px) {
+    .sol-approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sol-section-title {
+        font-size: 1.8rem;
+    }
+
+    .sol-section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 35px;
+    }
+
+    .sol-offering-section {
+        padding: 50px 0;
+    }
+
+    .sol-offering-name {
+        font-size: 1.9rem;
+    }
+
+    .sol-offering-desc {
+        font-size: 1rem;
+    }
+
+    .sol-problem-section,
+    .sol-approach-section,
+    .sol-capabilities-section,
+    .sol-io-section {
+        padding: 60px 0;
+    }
+
+    .sol-problem-grid,
+    .sol-cap-grid,
+    .sol-io-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sol-approach-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sol-section-title {
+        font-size: 1.5rem;
+    }
+
+    .sol-offering-section {
+        padding: 40px 0;
+    }
+
+    .sol-offering-name {
+        font-size: 1.5rem;
+    }
+
+    .sol-offering-desc {
+        font-size: 0.9rem;
+    }
+
+    .sol-problem-section,
+    .sol-approach-section,
+    .sol-capabilities-section,
+    .sol-io-section {
+        padding: 40px 0;
+    }
+
+    .sol-problem-card,
+    .sol-cap-card,
+    .sol-io-card {
+        padding: 25px;
+    }
+
+    .sol-approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sol-approach-step {
+        padding: 25px 20px;
     }
 }

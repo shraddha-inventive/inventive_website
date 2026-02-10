@@ -94,7 +94,8 @@ function prevSlide() {
 }
 
 function startSlideshow() {
-    slideInterval = setInterval(nextSlide, 5000);
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 3000);
 }
 
 function stopSlideshow() {
@@ -255,12 +256,30 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// ===== Pause slider on hover =====
-const sliderContainer = document.querySelector('.hero-slider');
-if (sliderContainer) {
-    sliderContainer.addEventListener('mouseenter', stopSlideshow);
-    sliderContainer.addEventListener('mouseleave', startSlideshow);
+// ===== Services / Solutions Tab Switching =====
+const serviceTabs = document.querySelectorAll('.services-tab');
+const serviceTabPanels = document.querySelectorAll('.services-tab-panel');
+
+if (serviceTabs.length > 0) {
+    serviceTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetId = tab.getAttribute('data-tab');
+
+            // Update active tab
+            serviceTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Update active panel
+            serviceTabPanels.forEach(panel => panel.classList.remove('active'));
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        });
+    });
 }
+
+const sliderContainer = document.querySelector('.hero-slider');
 
 // ===== Touch Swipe for Slider =====
 let touchStartX = 0;

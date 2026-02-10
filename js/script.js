@@ -279,6 +279,32 @@ if (serviceTabs.length > 0) {
     });
 }
 
+// ===== Solutions Page Tab Switching =====
+const solTabs = document.querySelectorAll('.sol-tab');
+const solTabContents = document.querySelectorAll('.sol-tab-content');
+
+if (solTabs.length > 0) {
+    solTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetTab = tab.getAttribute('data-tab');
+            const isActive = tab.classList.contains('active');
+
+            // Close all tabs and content
+            solTabs.forEach(t => t.classList.remove('active'));
+            solTabContents.forEach(content => content.classList.remove('active'));
+
+            // If it was closed, open it; if it was open, keep it closed (toggle)
+            if (!isActive) {
+                tab.classList.add('active');
+                const targetContent = document.getElementById('tab-' + targetTab);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            }
+        });
+    });
+}
+
 const sliderContainer = document.querySelector('.hero-slider');
 
 // ===== Touch Swipe for Slider =====
@@ -368,6 +394,48 @@ if (openVideoBtn && videoModal) {
         }
     });
 }
+
+// ===== Service Read More Modals =====
+const readMoreBtns = document.querySelectorAll('.btn-read-more[data-modal]');
+readMoreBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modalId = btn.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Close service modals
+document.querySelectorAll('.service-modal-overlay').forEach(overlay => {
+    const closeBtn = overlay.querySelector('.service-modal-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    // Close on overlay click (outside modal)
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// Close service modals on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.service-modal-overlay.active').forEach(overlay => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+});
 
 // ===== Animate elements on scroll =====
 const animateOnScroll = () => {

@@ -1261,6 +1261,183 @@ img {
     border: 0;
 }
 
+/* ===== Service Read More Modal ===== */
+.service-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.service-modal-overlay.active {
+    display: flex;
+}
+
+.service-modal {
+    position: relative;
+    background: var(--white);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 780px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    animation: serviceModalIn 0.3s ease;
+}
+
+@keyframes serviceModalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.service-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: #333;
+    border: none;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.3s;
+}
+
+.service-modal-close:hover {
+    background: var(--primary-color);
+}
+
+.service-modal-content {
+    padding: 35px 40px 40px;
+}
+
+.service-modal-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+}
+
+.service-modal-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+.service-modal-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.service-modal-content ul {
+    list-style: disc;
+    padding-left: 22px;
+    margin-bottom: 10px;
+}
+
+.service-modal-content ul li {
+    font-size: 0.93rem;
+    line-height: 1.65;
+    color: var(--text-color);
+    margin-bottom: 6px;
+}
+
+.service-modal-content ul li::marker {
+    color: var(--primary-color);
+}
+
+/* Service Modal Scrollbar */
+.service-modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.service-modal::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0 12px 12px 0;
+}
+
+.service-modal::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Service Modal Responsive */
+@media (max-width: 768px) {
+    .service-modal {
+        width: 95%;
+        max-height: 80vh;
+    }
+
+    .service-modal-content {
+        padding: 25px 22px 30px;
+    }
+
+    .service-modal-title {
+        font-size: 1.3rem;
+    }
+
+    .service-modal-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .service-modal-content p,
+    .service-modal-content ul li {
+        font-size: 0.88rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-modal-content {
+        padding: 20px 18px 25px;
+    }
+
+    .service-modal-title {
+        font-size: 1.15rem;
+    }
+
+    .service-modal-subtitle {
+        font-size: 0.98rem;
+        margin-top: 18px;
+    }
+
+    .service-modal-close {
+        top: 8px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 1.3rem;
+    }
+}
+
 /* ===== Footer ===== */
 .footer {
     background-color: var(--footer-bg);
@@ -3752,6 +3929,173 @@ img {
     }
 }
 
+/* ===== Solutions Page – Tabs ===== */
+
+.sol-tabs-section {
+    padding: 60px 0 80px;
+    background-color: var(--white);
+}
+
+.sol-tabs-heading {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 35px;
+}
+
+.sol-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sol-tab {
+    flex: 1;
+    padding: 24px 30px;
+    background: linear-gradient(135deg, #f8fbff 0%, #eef6fd 100%);
+    border: 2px solid var(--primary-light);
+    border-radius: 14px;
+    font-family: var(--font-heading);
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.1);
+    overflow: hidden;
+}
+
+.sol-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 14px 0 0 14px;
+    transition: width 0.3s ease;
+}
+
+.sol-tab:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 22px rgba(14, 165, 233, 0.18);
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #eef6fd 0%, #e0f0fc 100%);
+}
+
+.sol-tab:hover::before {
+    width: 6px;
+}
+
+.sol-tab.active {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0284C7 100%);
+    color: var(--white);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
+}
+
+.sol-tab.active::before {
+    width: 0;
+}
+
+.sol-tab-icon {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+    opacity: 0.6;
+}
+
+.sol-tab.active .sol-tab-icon {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.sol-tab-content {
+    display: none;
+}
+
+.sol-tab-content.active {
+    display: block;
+    animation: tabFadeIn 0.4s ease;
+}
+
+.sol-tab-content .sol-io-section {
+    padding-bottom: 30px;
+}
+
+.sol-tab-content.active + .sol-tab-content,
+.sol-tab-content.active ~ footer {
+    margin-top: 0;
+}
+
+/* Decorative divider between tab content and footer */
+.sol-footer-spacer {
+    padding: 40px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.sol-footer-spacer .sol-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .sol-tabs-heading {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .sol-tabs {
+        flex-direction: column;
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .sol-tab {
+        font-size: 0.92rem;
+        padding: 16px 18px;
+    }
+
+    .sol-tab-content .sol-io-section {
+        padding-bottom: 20px;
+    }
+
+    .sol-footer-spacer {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sol-tabs-section {
+        padding: 40px 0 50px;
+    }
+
+    .sol-tab {
+        font-size: 0.85rem;
+        padding: 14px 14px;
+        gap: 8px;
+    }
+
+    .sol-tab-icon {
+        font-size: 0.65rem;
+    }
+}
+
 /* ===== Solutions Page – EIT Sections ===== */
 
 /* Shared Section Title */
@@ -3999,6 +4343,24 @@ img {
     font-size: 0.95rem;
     line-height: 1.7;
     margin: 0;
+}
+
+.sol-cap-read-more {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 22px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 2px solid #333;
+    border-radius: 4px;
+    color: #333;
+    background: transparent;
+    transition: var(--transition);
+}
+
+.sol-cap-read-more:hover {
+    background-color: #333;
+    color: var(--white);
 }
 
 /* Inputs & Outputs */

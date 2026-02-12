@@ -44,6 +44,7 @@
                         <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                         <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
                         <li class="nav-item"><a href="solutions.html" class="nav-link">Solution</a></li>
+                        <li class="nav-item"><a href="our-solutions.html" class="nav-link">Solutions</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
                     </ul>
                     <!-- Mobile Menu Toggle -->
@@ -63,6 +64,7 @@
                 <li><a href="about.html" class="mobile-menu-item">About Us</a></li>
                 <li><a href="services.html" class="mobile-menu-item active">Services</a></li>
                 <li><a href="solutions.html" class="mobile-menu-item">Solution</a></li>
+                <li><a href="our-solutions.html" class="mobile-menu-item">Solutions</a></li>
                 <li><a href="contact.html" class="mobile-menu-item">Contact Us</a></li>
             </ul>
         </div>
@@ -84,15 +86,19 @@
         </div>
     </section>
 
-    <!-- BIM Services Section -->
+    <!-- BIM Services & Speed BIM Combined Section -->
+    <span id="speed-bim"></span>
     <section class="service-detail" id="bim-services">
         <div class="container">
             <div class="service-detail-grid">
                 <div class="service-detail-content">
-                    <h2 class="service-detail-title">BIM Services</h2>
+                    <h2 class="service-detail-title">BIM Services & Speed BIM</h2>
                     <ul class="service-detail-list">
                         <li>Structural BIM Modeling</li>
                         <li>MEP BIM Modeling</li>
+                        <li>Tech enabled BIM Model Enhancement</li>
+                        <li>Revit Plug-ins development</li>
+                        <li>Interoperability between various CAD Platforms</li>
                     </ul>
                     <div class="service-detail-buttons">
                         <a href="contact.html" class="btn-enquire">Enquire Now</a>
@@ -100,37 +106,14 @@
                     </div>
                 </div>
                 <div class="service-detail-image">
-                    <img src="images/BIM-Services.png" alt="BIM Services">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Speed BIM Section -->
-    <section class="service-detail service-detail-reverse" id="speed-bim">
-        <div class="container">
-            <div class="service-detail-grid">
-                <div class="service-detail-content">
-                    <h2 class="service-detail-title">Speed BIM</h2>
-                    <ul class="service-detail-list">
-                        <li>Tech enabled BIM Model Enhancement</li>
-                        <li>Revit Plug-ins development</li>
-                        <li>Interoperability between various CAD Platforms</li>
-                    </ul>
-                    <div class="service-detail-buttons">
-                        <a href="contact.html" class="btn-enquire">Enquire Now</a>
-                        <a href="#" class="btn-read-more" data-modal="modal-speedbim">Read More</a>
-                    </div>
-                </div>
-                <div class="service-detail-image">
-                    <img src="images/Speed-BIM.png" alt="Speed BIM">
+                    <img src="images/BIM-Services.png" alt="BIM Services & Speed BIM">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Engineering Services Section -->
-    <section class="service-detail" id="engineering-services">
+    <section class="service-detail service-detail-reverse" id="engineering-services">
         <div class="container">
             <div class="service-detail-grid">
                 <div class="service-detail-content">
@@ -154,7 +137,7 @@
     </section>
 
     <!-- CAD Automation Section -->
-    <section class="service-detail service-detail-reverse" id="cad-automation">
+    <section class="service-detail" id="cad-automation">
         <div class="container">
             <div class="service-detail-grid">
                 <div class="service-detail-content">
@@ -197,7 +180,7 @@
     </section>
 
     <!-- Digitalization Section -->
-    <section class="service-detail" id="digitalization">
+    <section class="service-detail service-detail-reverse" id="digitalization">
         <div class="container">
             <div class="service-detail-grid">
                 <div class="service-detail-content">
@@ -220,174 +203,326 @@
 
     <!-- ===== Service Modals ===== -->
 
-    <!-- BIM Services Modal -->
+    <!-- BIM Services & Speed BIM Combined Modal -->
     <div class="service-modal-overlay" id="modal-bim">
-        <div class="service-modal">
+        <div class="service-modal service-modal-enhanced">
             <button class="service-modal-close">&times;</button>
-            <div class="service-modal-content">
-                <h2 class="service-modal-title">BIM Services</h2>
-                <h3 class="service-modal-subtitle">Structural BIM Modeling</h3>
-                <ul>
-                    <li>Comprehensive Structural BIM Services: Initial design to project completion, offering detailed structural analysis and 3D modeling for various project types.</li>
-                    <li>Tech Enabled: Utilize Revit, Navisworks, and in-house developed tools to create accurate and efficient BIM models.</li>
-                    <li>LOD 100 to LOD 500: Expertise in developing models across various Levels of Development (LOD), ensuring precise and detailed outputs.</li>
-                    <li>Construction Documentation: Delivering comprehensive documentation, including shop drawings, fabrication drawings, and part drawings.</li>
-                </ul>
-                <h3 class="service-modal-subtitle">MEP BIM Modeling</h3>
-                <ul>
-                    <li>Mechanical/HVAC BIM Services: Create detailed 3D models for HVAC systems, including ductwork and piping, ensuring precise coordination and clash detection.</li>
-                    <li>Electrical BIM Services: Develop accurate electrical system models, integrating data and coordinating with other trades to avoid conflicts.</li>
-                    <li>Plumbing BIM Services: Deliver high-quality 3D models for plumbing systems, compliant with industry standards, to ensure efficient installation.</li>
-                    <li>Fire Protection BIM Services: Generate detailed fire protection system models, considering relevant codes and standards for safety and compliance.</li>
-                    <li>MEP Coordination: Provide MEP coordination services to identify and resolve interdisciplinary clashes, enhancing project efficiency and reducing delays.</li>
-                    <li>MEP Shop Drawings: Produce code-compliant shop drawings, including floor plans, sections, elevations, and detailed layouts for on-site construction.</li>
-                </ul>
+            <div class="service-modal-header-bar">
+                <div class="service-modal-header-icon"><i class="fas fa-building"></i></div>
+                <h2 class="service-modal-title">BIM Services & Speed BIM</h2>
             </div>
-        </div>
-    </div>
-
-    <!-- Speed BIM Modal -->
-    <div class="service-modal-overlay" id="modal-speedbim">
-        <div class="service-modal">
-            <button class="service-modal-close">&times;</button>
             <div class="service-modal-content">
-                <h2 class="service-modal-title">Speed BIM</h2>
-                <h3 class="service-modal-subtitle">Tech enabled BIM Model Enhancement</h3>
-                <p>Accelerate BIM model enhancement (LOD 100 to LOD 400) with our advanced in-house tools.</p>
-                <ul>
-                    <li>Attribute / Parameter Management – Assigning, modifying, and managing parameters across multiple elements</li>
-                    <li>Element Renumbering – Renumbering rooms, doors, grids, or other elements</li>
-                    <li>Bulk Dimensioning – Adding dimensions to multiple views or elements</li>
-                    <li>One-Click Insulation Layer Creation: Automate the addition of insulation layers in your BIM models.</li>
-                    <li>Automatic Attribute Migration: Seamlessly transfer attributes from any CAD software to Revit with minimal effort.</li>
-                    <li>Faster Model Alignment: Improve accuracy by automatically extracting and aligning model coordinates.</li>
-                </ul>
-                <h3 class="service-modal-subtitle">Revit Plug-ins development</h3>
-                <p>Automate your repetitive tasks to fast track your BIM modeling by customized development of Revit Plug ins for your various repetitive tasks.</p>
-                <ul>
-                    <li>Sheet creation and management – Creating multiple sheets, assigning views, and managing sheet layouts</li>
-                    <li>View Template Application – Applying view templates across multiple views</li>
-                    <li>Model Cleanup and Optimization – Cleaning up unnecessary elements like removal of unused families, purging unused items, and optimizing the model</li>
-                    <li>Clash Detection and Coordination – Identifying and resolving clashes between different disciplines by using Navisworks manage and BIM Track.</li>
-                    <li>Family Placement and Arraying – Placing multiple instances of a family (e.g., lights, furniture) by automating the arraying and placement of families based on rules or patterns.</li>
-                    <li>Scheduling and Quantity Takeoffs – Creating and updating schedules and quantity takeoffs by using Revit plug ins enabling faster updates and management of schedules and quantities.</li>
-                    <li>Batch Exporting and Printing – Exporting or printing multiple views, sheets, or models by automating the batch exporting and printing process.</li>
-                </ul>
-                <h3 class="service-modal-subtitle">Interoperability between various CAD Platforms</h3>
-                <p>Avoid your remodeling efforts in various CAD Platforms for following design scenarios with the help of our tech enabled remodeling services.</p>
-                <ul>
-                    <li>AutoCAD to Tekla Conversion for Fabrication detailing.</li>
-                    <li>Architectural Elements in Revit to remodeling in Tekla for Structural Detailing.</li>
-                    <li>Mechanical or structural components SolidWorks model to Tekla for Structural Steelwork.</li>
-                    <li>AutoCAD Civil 3D initial design to Tekla modelling for structural analysis, connection detailing, and fabrication.</li>
-                </ul>
+                <!-- BIM Services Section -->
+                <h3 class="service-modal-section-label"><i class="fas fa-cube"></i> BIM Services</h3>
+                <div class="service-modal-two-col">
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-layer-group"></i>
+                                <h3>Structural BIM Modeling</h3>
+                            </div>
+                            <ul class="service-modal-list">
+                                <li><strong>Comprehensive Structural BIM:</strong> Initial design to project completion, offering detailed structural analysis and 3D modeling.</li>
+                                <li><strong>Tech Enabled:</strong> Utilize Revit, Navisworks, and in-house developed tools for accurate BIM models.</li>
+                                <li><strong>LOD 100 to LOD 500:</strong> Expertise across various Levels of Development, ensuring precise outputs.</li>
+                                <li><strong>Construction Documentation:</strong> Shop drawings, fabrication drawings, and part drawings.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-project-diagram"></i>
+                                <h3>MEP BIM Modeling</h3>
+                            </div>
+                            <ul class="service-modal-list">
+                                <li><strong>Mechanical/HVAC:</strong> Detailed 3D models for HVAC systems with precise coordination and clash detection.</li>
+                                <li><strong>Electrical:</strong> Accurate electrical system models with trade coordination.</li>
+                                <li><strong>Plumbing:</strong> Industry-compliant 3D plumbing models for efficient installation.</li>
+                                <li><strong>Fire Protection:</strong> Detailed fire protection models with code compliance.</li>
+                                <li><strong>MEP Coordination:</strong> Interdisciplinary clash resolution for reduced delays.</li>
+                                <li><strong>Shop Drawings:</strong> Code-compliant floor plans, sections, and detailed layouts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="service-modal-divider"></div>
+
+                <!-- Speed BIM Section -->
+                <h3 class="service-modal-section-label"><i class="fas fa-bolt"></i> Speed BIM</h3>
+                <div class="service-modal-three-col">
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-rocket"></i>
+                                <h3>BIM Model Enhancement</h3>
+                            </div>
+                            <p class="service-modal-block-desc">Accelerate BIM model enhancement (LOD 100 to LOD 400) with advanced in-house tools.</p>
+                            <ul class="service-modal-list">
+                                <li>Attribute / Parameter Management</li>
+                                <li>Element Renumbering</li>
+                                <li>Bulk Dimensioning</li>
+                                <li>One-Click Insulation Layer Creation</li>
+                                <li>Automatic Attribute Migration</li>
+                                <li>Faster Model Alignment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-plug"></i>
+                                <h3>Revit Plug-ins</h3>
+                            </div>
+                            <p class="service-modal-block-desc">Custom plug-ins to automate repetitive BIM tasks.</p>
+                            <ul class="service-modal-list">
+                                <li>Sheet Creation & Management</li>
+                                <li>View Template Application</li>
+                                <li>Model Cleanup & Optimization</li>
+                                <li>Clash Detection & Coordination</li>
+                                <li>Family Placement & Arraying</li>
+                                <li>Scheduling & Quantity Takeoffs</li>
+                                <li>Batch Exporting & Printing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-exchange-alt"></i>
+                                <h3>CAD Interoperability</h3>
+                            </div>
+                            <p class="service-modal-block-desc">Seamless conversion between CAD platforms.</p>
+                            <ul class="service-modal-list">
+                                <li>AutoCAD to Tekla for Fabrication</li>
+                                <li>Revit to Tekla for Structural Detailing</li>
+                                <li>SolidWorks to Tekla for Steelwork</li>
+                                <li>Civil 3D to Tekla for Analysis & Fabrication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-modal-tools-bar">
+                    <span class="tool-tag"><i class="fas fa-cube"></i> Revit</span>
+                    <span class="tool-tag"><i class="fas fa-eye"></i> Navisworks</span>
+                    <span class="tool-tag"><i class="fas fa-tools"></i> In-house Tools</span>
+                    <span class="tool-tag"><i class="fas fa-drafting-compass"></i> AutoCAD</span>
+                    <span class="tool-tag"><i class="fas fa-industry"></i> Tekla</span>
+                    <span class="tool-tag"><i class="fas fa-cog"></i> SolidWorks</span>
+                    <span class="tool-tag"><i class="fas fa-road"></i> Civil 3D</span>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Engineering Services Modal -->
     <div class="service-modal-overlay" id="modal-engineering">
-        <div class="service-modal">
+        <div class="service-modal service-modal-enhanced">
             <button class="service-modal-close">&times;</button>
-            <div class="service-modal-content">
+            <div class="service-modal-header-bar">
+                <div class="service-modal-header-icon"><i class="fas fa-hard-hat"></i></div>
                 <h2 class="service-modal-title">Engineering Services</h2>
-                <h3 class="service-modal-subtitle">CAD Drafting Services</h3>
-                <p>Improve your Project Engineering design speed by using our experienced CAD drafting and detailing team in India.</p>
-                <ul>
-                    <li>2D & 3D CAD Drawings: Precise and detailed drawings for diverse industry applications.</li>
-                    <li>3D Modeling from Existing Drawings: Transform existing 2D drawings or images into accurate 3D models.</li>
-                    <li>As-Built & Markup Drawings: Updates and markups to ensure your drawings reflect the current build.</li>
-                    <li>CAD Conversion: Seamless conversion of PDFs to CAD and 2D to 3D models.</li>
-                    <li>Fabrication Drawings: Detailed fabrication drawings derived from Plant 3D, SolidWorks, and TEKLA models.</li>
-                    <li>Assembly Drawings with BOM: Comprehensive assembly drawings complete with Bill of Materials (BOM).</li>
-                </ul>
-                <h3 class="service-modal-subtitle">Electrical and instrumentation Design and Detailing</h3>
-                <p>Our electrical and instrumentation engineering services focus on delivering innovative designs that ensure compliance with industry standards while optimizing solutions to meet your specific needs.</p>
-                <ul>
-                    <li>3D/2D cable tray layouts using advanced software like AutoCAD, Plant3D, and Revit, including Material Take-Offs (MTOs)</li>
-                    <li>Instrument location and junction box layouts</li>
-                    <li>Power and control cable sizing and scheduling</li>
-                    <li>Indoor and outdoor lighting layouts, based on Dialux reports</li>
-                    <li>Earthing and lightning protection layouts</li>
-                    <li>Instrument Index and I/O lists</li>
-                    <li>Instrument hook-up drawings</li>
-                    <li>Instrument loop diagrams</li>
-                    <li>General Arrangement (GA) and schematic drawings for MCC, PLC, and DCS panels</li>
-                </ul>
-                <h3 class="service-modal-subtitle">Structural Design Services</h3>
-                <p>FastTrack your Structural design and remodeling work by using our tech enabled structural remodeling and detailing services.</p>
-                <p><strong>Structural Design and Remodeling in Tekla</strong></p>
-                <ul>
-                    <li>Expert Structural Design & Modeling in Tekla tailored to meet your specific needs</li>
-                    <li>Accurate, Data-Rich 3D Models</li>
-                    <li>Comprehensive Fabrication Drawings including bolt layouts, welds, and accurate part lists.</li>
-                    <li>Structural analysis to fabrication detailing</li>
-                </ul>
-                <p><strong>Tech Enabled Platform Ladder Design Services</strong></p>
-                <ul>
-                    <li>Faster Platform & Ladder design delivery with almost 20-30% reduction in delivery timeline by leveraging our CAD automation tools</li>
-                    <li>Productivity Gain of 5% per year to our customers, with longer contract commitments, resulting in the best possible Project cost optimization.</li>
-                </ul>
-                <h3 class="service-modal-subtitle">Engineering Staffing Services</h3>
-                <p>Build your Engineering design team with the right talent by using our Engineering talent acquisition expertise.</p>
-                <ul>
-                    <li>Specialized Talent Acquisition: Access to a wide network of skilled engineering professionals across various disciplines.</li>
-                    <li>Flexible Staffing Solutions: Tailored services contract-to-hire, or permanent staffing deployed onsite / Offsite to meet specific project needs.</li>
-                    <li>Industry Expertise: Deep understanding of the engineering industry ensures perfect candidate-role alignment.</li>
-                </ul>
+            </div>
+            <div class="service-modal-content">
+                <div class="service-modal-two-col">
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <h3>CAD Drafting Services</h3>
+                            </div>
+                            <p class="service-modal-block-desc">Improve project engineering design speed with our experienced CAD team.</p>
+                            <ul class="service-modal-list">
+                                <li>2D & 3D CAD Drawings for diverse applications</li>
+                                <li>3D Modeling from Existing Drawings</li>
+                                <li>As-Built & Markup Drawings</li>
+                                <li>PDF to CAD and 2D to 3D Conversion</li>
+                                <li>Fabrication Drawings from Plant 3D, SolidWorks, TEKLA</li>
+                                <li>Assembly Drawings with BOM</li>
+                            </ul>
+                        </div>
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-users-cog"></i>
+                                <h3>Engineering Staffing</h3>
+                            </div>
+                            <ul class="service-modal-list">
+                                <li>Specialized Talent Acquisition across disciplines</li>
+                                <li>Flexible Staffing: Contract-to-hire or permanent</li>
+                                <li>Industry Expertise for candidate-role alignment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-bolt"></i>
+                                <h3>Electrical & Instrumentation</h3>
+                            </div>
+                            <p class="service-modal-block-desc">Innovative designs compliant with industry standards.</p>
+                            <ul class="service-modal-list">
+                                <li>3D/2D Cable Tray Layouts with MTOs</li>
+                                <li>Instrument Location & Junction Box Layouts</li>
+                                <li>Power & Control Cable Sizing</li>
+                                <li>Indoor/Outdoor Lighting Layouts (Dialux)</li>
+                                <li>Earthing & Lightning Protection</li>
+                                <li>Instrument Hook-up & Loop Diagrams</li>
+                                <li>GA & Schematic Drawings (MCC, PLC, DCS)</li>
+                            </ul>
+                        </div>
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-th-large"></i>
+                                <h3>Structural Design</h3>
+                            </div>
+                            <ul class="service-modal-list">
+                                <li>Expert Design & Modeling in Tekla</li>
+                                <li>Accurate, Data-Rich 3D Models</li>
+                                <li>Comprehensive Fabrication Drawings</li>
+                                <li>20-30% faster Platform & Ladder delivery</li>
+                                <li>5% yearly productivity gain</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-modal-tools-bar">
+                    <span class="tool-tag"><i class="fas fa-drafting-compass"></i> AutoCAD</span>
+                    <span class="tool-tag"><i class="fas fa-industry"></i> Plant 3D</span>
+                    <span class="tool-tag"><i class="fas fa-cube"></i> Revit</span>
+                    <span class="tool-tag"><i class="fas fa-industry"></i> Tekla</span>
+                    <span class="tool-tag"><i class="fas fa-cog"></i> SolidWorks</span>
+                    <span class="tool-tag"><i class="fas fa-sun"></i> Dialux</span>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- CAD Automation Modal -->
     <div class="service-modal-overlay" id="modal-cad">
-        <div class="service-modal">
+        <div class="service-modal service-modal-enhanced">
             <button class="service-modal-close">&times;</button>
-            <div class="service-modal-content">
+            <div class="service-modal-header-bar">
+                <div class="service-modal-header-icon"><i class="fas fa-robot"></i></div>
                 <h2 class="service-modal-title">CAD Automation</h2>
-                <p>Modularize your design process with innovative CAD automation solutions that streamline complex workflows, reduce errors, and accelerate project timelines. Unlock the full potential of your engineering team with automated precision, allowing them to innovate faster using intelligent CAD tools tailored to your needs.</p>
-                <h3 class="service-modal-subtitle">Electrical Engineering</h3>
-                <ul>
-                    <li>Single Line diagram: Automate your SLD creation process in AutoCAD with precision and efficiency, transforming how you design electrical systems for panels.</li>
-                    <li>Cable Tray Layout: Streamline your 2D/3D cable tray design with our powerful automation tool, saving time and enhancing accuracy compatible with Plant 3D, Revit, AutoCAD.</li>
-                    <li>Lighting Layout: Streamline your 2D/3D lighting layout design with our powerful automation tool, saving time and enhancing accuracy compatible with Plant 3D, Revit, AutoCAD.</li>
-                </ul>
-                <h3 class="service-modal-subtitle">Mechanical Engineering</h3>
-                <ul>
-                    <li>Site/Shop Tank: Automate your tank GA and fabrication drawings for shop and site with precision, boosting efficiency and accuracy.</li>
-                    <li>Heat Exchanger: Effortlessly automate heat exchanger GA and fabrication drawings, ensuring precise and efficient project delivery.</li>
-                </ul>
-                <h3 class="service-modal-subtitle">Structural Engineering</h3>
-                <ul>
-                    <li>Platform and Ladder: Automate platform and ladder GA and fabrication drawings in AutoCAD and Tekla, enhancing speed and accuracy.</li>
-                </ul>
+            </div>
+            <div class="service-modal-content">
+                <p class="service-modal-intro">Modularize your design process with innovative CAD automation solutions that streamline complex workflows, reduce errors, and accelerate project timelines.</p>
+                <div class="service-modal-three-col">
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-bolt"></i>
+                                <h3>Electrical Engineering</h3>
+                            </div>
+                            <ul class="service-modal-list">
+                                <li><strong>Single Line Diagram:</strong> Automate SLD creation in AutoCAD</li>
+                                <li><strong>Cable Tray Layout:</strong> 2D/3D cable tray design in Plant 3D, Revit, AutoCAD</li>
+                                <li><strong>Lighting Layout:</strong> 2D/3D lighting layout automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-cog"></i>
+                                <h3>Mechanical Engineering</h3>
+                            </div>
+                            <ul class="service-modal-list">
+                                <li><strong>Site/Shop Tank:</strong> Automated tank GA and fabrication drawings</li>
+                                <li><strong>Heat Exchanger:</strong> Automated heat exchanger GA and fabrication drawings</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-th-large"></i>
+                                <h3>Structural Engineering</h3>
+                            </div>
+                            <ul class="service-modal-list">
+                                <li><strong>Platform & Ladder:</strong> Automated GA and fabrication drawings in AutoCAD and Tekla</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-modal-tools-bar">
+                    <span class="tool-tag"><i class="fas fa-drafting-compass"></i> AutoCAD</span>
+                    <span class="tool-tag"><i class="fas fa-industry"></i> Plant 3D</span>
+                    <span class="tool-tag"><i class="fas fa-cube"></i> Revit</span>
+                    <span class="tool-tag"><i class="fas fa-industry"></i> Tekla</span>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Digitalization Modal -->
     <div class="service-modal-overlay" id="modal-digital">
-        <div class="service-modal">
+        <div class="service-modal service-modal-enhanced">
             <button class="service-modal-close">&times;</button>
-            <div class="service-modal-content">
+            <div class="service-modal-header-bar">
+                <div class="service-modal-header-icon"><i class="fas fa-digital-tachograph"></i></div>
                 <h2 class="service-modal-title">Digitalization</h2>
-                <h3 class="service-modal-subtitle">Digital Handover for Green Field Project using Plant Digital Twin</h3>
-                <p><strong>Problem Statement:</strong> Updating as-built engineering documents and ensuring their handover in an easily accessible format is a significant challenge for EPCs (Engineering, Procurement, and Construction companies) and OEMs (Original Equipment Manufacturers). However, it is crucial for both project completion and the entire plant life cycle.</p>
-                <p><strong>Our Solution:</strong> Web enabled P&ID linked Plant Asset's Digital Twin creation</p>
-                <p><strong>Solution Highlights:</strong></p>
-                <ul>
-                    <li>Ensure faster and cost-effective creation of Plant digital twin – Centralized storage of engineering documents and data with easy search, access, and collaboration through web browser or QR code scanning.</li>
-                    <li>Enables P&ID linked 3D visualization and Navigation of the Plant for users across the organization.</li>
-                    <li>Provides updated "as-built" or "as-operated" version of Plant assets with Plant O&M and procurement friendly asset attributes as per the Cobie standards.</li>
-                </ul>
-                <h3 class="service-modal-subtitle">As-Built BIM Modeling in Revit</h3>
-                <p><strong>Our Solution:</strong> Achieve faster and more accurate LOD 300/500 As built to BIM in Revit with the assistance of our tech tools.</p>
-                <p><strong>Solution Highlights:</strong></p>
-                <ul>
-                    <li>Interoperability between CAD eliminates the need for manual remodeling, thus reducing the delivery timeline by 50%.</li>
-                    <li>The addition of peripherals such as insulation, gaskets, and attributes are accomplished through CAD scripts, speeding up BIM preparation.</li>
-                    <li>This reduces the requirement for different CAD skills, resources, and licenses.</li>
-                </ul>
+            </div>
+            <div class="service-modal-content">
+                <div class="service-modal-two-col">
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-vr-cardboard"></i>
+                                <h3>Plant Digital Twin</h3>
+                            </div>
+                            <div class="service-modal-problem-solution">
+                                <div class="problem-box">
+                                    <strong><i class="fas fa-exclamation-circle"></i> Challenge:</strong>
+                                    <p>Updating as-built documents and ensuring handover in an accessible format is a major challenge for EPCs and OEMs.</p>
+                                </div>
+                                <div class="solution-box">
+                                    <strong><i class="fas fa-check-circle"></i> Our Solution:</strong>
+                                    <p>Web-enabled P&ID linked Plant Asset Digital Twin creation</p>
+                                </div>
+                            </div>
+                            <ul class="service-modal-list">
+                                <li>Faster, cost-effective Plant digital twin creation with centralized storage</li>
+                                <li>P&ID linked 3D visualization and navigation across the organization</li>
+                                <li>Updated "as-built" version with Cobie-standard asset attributes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-modal-col">
+                        <div class="service-modal-block">
+                            <div class="service-modal-block-header">
+                                <i class="fas fa-cube"></i>
+                                <h3>As-Built BIM Modeling</h3>
+                            </div>
+                            <div class="service-modal-problem-solution">
+                                <div class="solution-box">
+                                    <strong><i class="fas fa-check-circle"></i> Our Solution:</strong>
+                                    <p>Faster LOD 300/500 As-built to BIM in Revit with tech tools.</p>
+                                </div>
+                            </div>
+                            <ul class="service-modal-list">
+                                <li>CAD interoperability eliminates manual remodeling &mdash; <strong>50% faster delivery</strong></li>
+                                <li>Automated addition of insulation, gaskets, and attributes via CAD scripts</li>
+                                <li>Reduces requirement for different CAD skills, resources, and licenses</li>
+                            </ul>
+                            <div class="service-modal-stat-highlight">
+                                <div class="stat-badge">
+                                    <span class="stat-badge-number">50%</span>
+                                    <span class="stat-badge-label">Faster Delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-modal-tools-bar">
+                    <span class="tool-tag"><i class="fas fa-cube"></i> Revit</span>
+                    <span class="tool-tag"><i class="fas fa-industry"></i> Plant 3D</span>
+                    <span class="tool-tag"><i class="fas fa-globe"></i> Web-Based Digital Twin</span>
+                    <span class="tool-tag"><i class="fas fa-qrcode"></i> QR Code Access</span>
+                </div>
             </div>
         </div>
     </div>
@@ -412,8 +547,7 @@
                 <div class="footer-col">
                     <h4 class="footer-heading">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html#bim-services">BIM Services</a></li>
-                        <li><a href="services.html#speed-bim">Speed BIM</a></li>
+                        <li><a href="services.html#bim-services">BIM Services & Speed BIM</a></li>
                         <li><a href="services.html#engineering-services">Engineering Services</a></li>
                         <li><a href="services.html#cad-automation">CAD Automation</a></li>
                         <li><a href="services.html#digitalization">Digitalization</a></li>

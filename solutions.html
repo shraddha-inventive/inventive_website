@@ -44,6 +44,7 @@
                         <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                         <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
                         <li class="nav-item"><a href="solutions.html" class="nav-link active">Solution</a></li>
+                        <li class="nav-item"><a href="our-solutions.html" class="nav-link">Solutions</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
                     </ul>
                     <!-- Mobile Menu Toggle -->
@@ -63,6 +64,7 @@
                 <li><a href="about.html" class="mobile-menu-item">About Us</a></li>
                 <li><a href="services.html" class="mobile-menu-item">Services</a></li>
                 <li><a href="solutions.html" class="mobile-menu-item active">Solution</a></li>
+                <li><a href="our-solutions.html" class="mobile-menu-item">Solutions</a></li>
                 <li><a href="contact.html" class="mobile-menu-item">Contact Us</a></li>
             </ul>
         </div>
@@ -157,21 +159,25 @@
             <div class="container">
                 <h2 class="sol-section-title">Our Solution Approach</h2>
                 <p class="sol-section-subtitle">The EIT Support Extraction platform works on top of existing 3D coordination environments to:</p>
-                <div class="sol-approach-grid">
-                    <div class="sol-approach-step">
+                <div class="sol-approach-grid sol-approach-timeline">
+                    <div class="sol-approach-step animated-step">
                         <div class="sol-approach-num">01</div>
+                        <div class="sol-approach-icon"><i class="fas fa-eye"></i></div>
                         <p>Read and interpret model geometry and metadata</p>
                     </div>
-                    <div class="sol-approach-step">
+                    <div class="sol-approach-step animated-step">
                         <div class="sol-approach-num">02</div>
+                        <div class="sol-approach-icon"><i class="fas fa-search"></i></div>
                         <p>Automatically identify EIT&#8209;related supports</p>
                     </div>
-                    <div class="sol-approach-step">
+                    <div class="sol-approach-step animated-step">
                         <div class="sol-approach-num">03</div>
+                        <div class="sol-approach-icon"><i class="fas fa-tags"></i></div>
                         <p>Classify supports by type, usage, and discipline</p>
                     </div>
-                    <div class="sol-approach-step">
+                    <div class="sol-approach-step animated-step">
                         <div class="sol-approach-num">04</div>
+                        <div class="sol-approach-icon"><i class="fas fa-file-export"></i></div>
                         <p>Generate structured engineering outputs ready for detailing and fabrication</p>
                     </div>
                 </div>
@@ -212,7 +218,7 @@
         <section class="sol-io-section">
             <div class="container">
                 <h2 class="sol-section-title">Inputs &amp; Outputs</h2>
-                <div class="sol-io-grid">
+                <div class="sol-io-flow">
                     <div class="sol-io-card sol-io-input">
                         <h3><i class="fas fa-arrow-circle-right"></i> Inputs</h3>
                         <ul>
@@ -220,6 +226,12 @@
                             <li>Electrical, instrumentation, and telecom model data</li>
                             <li>Project standards and support libraries (if available)</li>
                         </ul>
+                    </div>
+                    <div class="sol-io-arrow">
+                        <div class="sol-io-process-box">
+                            <i class="fas fa-microchip"></i>
+                            <span>AI Platform</span>
+                        </div>
                     </div>
                     <div class="sol-io-card sol-io-output">
                         <h3><i class="fas fa-arrow-circle-left"></i> Outputs</h3>
@@ -284,25 +296,35 @@
             <div class="container">
                 <h2 class="sol-section-title">Our Solution Approach</h2>
                 <p class="sol-section-subtitle">Our automation solution works directly within Plant 3D to deliver production&#8209;ready drawings:</p>
-                <div class="sol-approach-grid">
-                    <div class="sol-approach-step">
+                <div class="sol-approach-grid sol-approach-timeline">
+                    <div class="sol-approach-step animated-step">
                         <div class="sol-approach-num">01</div>
+                        <div class="sol-approach-icon"><i class="fas fa-industry"></i></div>
                         <p>Works directly in Plant 3D &mdash; no model export needed</p>
                     </div>
-                    <div class="sol-approach-step">
+                    <div class="sol-approach-step animated-step">
                         <div class="sol-approach-num">02</div>
+                        <div class="sol-approach-icon"><i class="fas fa-ruler-combined"></i></div>
                         <p>Applies design and drafting standards automatically without manual intervention</p>
                     </div>
-                    <div class="sol-approach-step">
+                    <div class="sol-approach-step animated-step">
                         <div class="sol-approach-num">03</div>
+                        <div class="sol-approach-icon"><i class="fas fa-magic"></i></div>
                         <p>Auto&#8209;generates production&#8209;ready drawings with tagging, layers, and annotations</p>
                     </div>
-                    <div class="sol-approach-step">
+                    <div class="sol-approach-step animated-step">
                         <div class="sol-approach-num">04</div>
+                        <div class="sol-approach-icon"><i class="fas fa-check-double"></i></div>
                         <p>Built&#8209;in quality checks and easy revision handling</p>
                     </div>
                 </div>
-                <p class="sol-approach-note">Up to 70% faster than traditional methods with standardized templates, auto tagging, and built&#8209;in quality assurance.</p>
+                <div class="sol-speed-banner">
+                    <div class="speed-banner-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="speed-banner-text">
+                        <span class="speed-number">70%</span>
+                        <span class="speed-label">Faster than traditional methods with standardized templates, auto tagging, and built-in quality assurance</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -343,7 +365,7 @@
         <section class="sol-io-section">
             <div class="container">
                 <h2 class="sol-section-title">Inputs &amp; Outputs</h2>
-                <div class="sol-io-grid">
+                <div class="sol-io-flow">
                     <div class="sol-io-card sol-io-input">
                         <h3><i class="fas fa-arrow-circle-right"></i> Inputs</h3>
                         <ul>
@@ -351,6 +373,12 @@
                             <li>Instrument objects and attributes from Plant 3D</li>
                             <li>Project drawing standards and templates</li>
                         </ul>
+                    </div>
+                    <div class="sol-io-arrow">
+                        <div class="sol-io-process-box">
+                            <i class="fas fa-drafting-compass"></i>
+                            <span>AI Engine</span>
+                        </div>
                     </div>
                     <div class="sol-io-card sol-io-output">
                         <h3><i class="fas fa-arrow-circle-left"></i> Outputs</h3>
@@ -371,67 +399,230 @@
         <div class="sol-divider"></div>
     </div>
 
-    <!-- ===== Key Capability Modals ===== -->
+    <!-- ===== Key Capability Modals (Graphical) ===== -->
 
     <!-- 2D Piping GA Modal -->
     <div class="service-modal-overlay" id="modal-piping-ga">
-        <div class="service-modal">
+        <div class="service-modal service-modal-enhanced">
             <button class="service-modal-close">&times;</button>
-            <div class="service-modal-content">
+            <div class="service-modal-header-bar">
+                <div class="service-modal-header-icon"><i class="fas fa-drafting-compass"></i></div>
                 <h2 class="service-modal-title">2D Piping GA</h2>
-                <ul>
-                    <li>Generates 2D General Arrangement drawings directly from the 3D piping model, maintaining full alignment with model geometry, coordinates, and attributes.</li>
-                    <li>Automatically applies drawing standards including layers, line types, annotation rules, tagging, and scaling to produce issue-ready GA drawings.</li>
-                    <li>Ensures extracted drawings reflect true pipe routing, elevations, orientations, and component placement, eliminating discrepancies between 3D and 2D deliverables. Production Ready 2D piping GA.</li>
-                </ul>
+            </div>
+            <div class="service-modal-content">
+                <!-- Process Flow Diagram -->
+                <div class="cap-modal-flow">
+                    <div class="cap-flow-step">
+                        <div class="cap-flow-icon"><i class="fas fa-cube"></i></div>
+                        <span>3D Piping Model</span>
+                    </div>
+                    <div class="cap-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="cap-flow-step cap-flow-engine">
+                        <div class="cap-flow-icon"><i class="fas fa-microchip"></i></div>
+                        <span>AI Engine</span>
+                    </div>
+                    <div class="cap-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="cap-flow-step">
+                        <div class="cap-flow-icon"><i class="fas fa-file-alt"></i></div>
+                        <span>Production-Ready 2D GA</span>
+                    </div>
+                </div>
+
+                <!-- Feature Cards -->
+                <div class="cap-modal-features">
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-vector-square"></i></div>
+                        <h4>Full Model Alignment</h4>
+                        <p>Generates 2D GA drawings directly from the 3D piping model, maintaining full alignment with geometry, coordinates, and attributes.</p>
+                    </div>
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-ruler-combined"></i></div>
+                        <h4>Auto-Apply Standards</h4>
+                        <p>Automatically applies drawing standards including layers, line types, annotation rules, tagging, and scaling for issue-ready output.</p>
+                    </div>
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-check-double"></i></div>
+                        <h4>Zero Discrepancies</h4>
+                        <p>Ensures true pipe routing, elevations, orientations, and component placement, eliminating 3D-to-2D discrepancies.</p>
+                    </div>
+                </div>
+
+                <!-- Key Highlights Bar -->
+                <div class="cap-modal-highlights">
+                    <span class="cap-highlight-pill"><i class="fas fa-bolt"></i> Automated Extraction</span>
+                    <span class="cap-highlight-pill"><i class="fas fa-layer-group"></i> Standardized Layers</span>
+                    <span class="cap-highlight-pill"><i class="fas fa-tags"></i> Auto Tagging</span>
+                    <span class="cap-highlight-pill"><i class="fas fa-expand-arrows-alt"></i> Accurate Scaling</span>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Instrument Location Drawing Modal -->
     <div class="service-modal-overlay" id="modal-instrument-loc">
-        <div class="service-modal">
+        <div class="service-modal service-modal-enhanced">
             <button class="service-modal-close">&times;</button>
-            <div class="service-modal-content">
+            <div class="service-modal-header-bar">
+                <div class="service-modal-header-icon"><i class="fas fa-map-marker-alt"></i></div>
                 <h2 class="service-modal-title">Instrument Location Drawing</h2>
-                <p><strong>Model-Driven Instrument Placement</strong></p>
-                <p>Extracts instrument location drawings directly from Plant 3D instrument objects, ensuring accurate representation of instrument coordinates, elevations, and orientation as per the 3D model.</p>
-                <ul>
-                    <li>Instrument Location Drawing is useful for Cable tray Layout Making</li>
-                    <li>Automatically pulls instrument tags, services, loop numbers, and related attributes from Plant 3D, ensuring drawing–model consistency.</li>
-                    <li>Controls annotation placement, symbol clarity, and scaling for clear and field-friendly instrument locator drawings. Quick instrument Location Drawing</li>
-                </ul>
+            </div>
+            <div class="service-modal-content">
+                <!-- Intro Badge -->
+                <div class="cap-modal-intro-badge">
+                    <i class="fas fa-crosshairs"></i>
+                    <span>Model-Driven Instrument Placement</span>
+                </div>
+                <p class="service-modal-intro">Extracts instrument location drawings directly from Plant 3D instrument objects, ensuring accurate representation of instrument coordinates, elevations, and orientation.</p>
+
+                <!-- Process Flow Diagram -->
+                <div class="cap-modal-flow">
+                    <div class="cap-flow-step">
+                        <div class="cap-flow-icon"><i class="fas fa-industry"></i></div>
+                        <span>Plant 3D Instruments</span>
+                    </div>
+                    <div class="cap-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="cap-flow-step cap-flow-engine">
+                        <div class="cap-flow-icon"><i class="fas fa-cogs"></i></div>
+                        <span>Extract & Process</span>
+                    </div>
+                    <div class="cap-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="cap-flow-step">
+                        <div class="cap-flow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <span>Location Drawings</span>
+                    </div>
+                </div>
+
+                <!-- Feature Cards -->
+                <div class="cap-modal-features">
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h4>Cable Tray Layout Ready</h4>
+                        <p>Instrument Location Drawings are directly useful for Cable Tray Layout design and coordination.</p>
+                    </div>
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-database"></i></div>
+                        <h4>Auto-Pull Attributes</h4>
+                        <p>Automatically pulls instrument tags, services, loop numbers, and attributes from Plant 3D for drawing-model consistency.</p>
+                    </div>
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-eye"></i></div>
+                        <h4>Clear & Field-Friendly</h4>
+                        <p>Controls annotation placement, symbol clarity, and scaling for easy-to-read instrument locator drawings on site.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Piping Support Locator Modal -->
     <div class="service-modal-overlay" id="modal-piping-support">
-        <div class="service-modal">
+        <div class="service-modal service-modal-enhanced">
             <button class="service-modal-close">&times;</button>
-            <div class="service-modal-content">
+            <div class="service-modal-header-bar">
+                <div class="service-modal-header-icon"><i class="fas fa-th"></i></div>
                 <h2 class="service-modal-title">Piping Support Locator</h2>
-                <ul>
-                    <li>Support Location Drawings with X-Y coordinates for Installation</li>
-                    <li>Generates clean support locator views with optimized annotation placement and minimal visual clutter for easy interpretation during fabrication and site installation.</li>
-                    <li>Updates support locator drawings automatically when piping routes or support positions change in the 3D model, eliminating manual rework and coordination errors.</li>
-                </ul>
+            </div>
+            <div class="service-modal-content">
+                <!-- Process Flow Diagram -->
+                <div class="cap-modal-flow">
+                    <div class="cap-flow-step">
+                        <div class="cap-flow-icon"><i class="fas fa-cube"></i></div>
+                        <span>3D Piping Model</span>
+                    </div>
+                    <div class="cap-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="cap-flow-step cap-flow-engine">
+                        <div class="cap-flow-icon"><i class="fas fa-search-location"></i></div>
+                        <span>Detect Supports</span>
+                    </div>
+                    <div class="cap-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="cap-flow-step">
+                        <div class="cap-flow-icon"><i class="fas fa-map-pin"></i></div>
+                        <span>X-Y Locator Drawings</span>
+                    </div>
+                </div>
+
+                <!-- Feature Cards -->
+                <div class="cap-modal-features">
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4>X-Y Coordinates for Installation</h4>
+                        <p>Support location drawings with precise X-Y coordinates for easy fabrication and site installation.</p>
+                    </div>
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-align-center"></i></div>
+                        <h4>Optimized Annotations</h4>
+                        <p>Clean support locator views with optimized annotation placement and minimal visual clutter for easy interpretation.</p>
+                    </div>
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-sync-alt"></i></div>
+                        <h4>Auto-Update on Changes</h4>
+                        <p>Automatically updates when piping routes or support positions change in the 3D model, eliminating manual rework.</p>
+                    </div>
+                </div>
+
+                <!-- Key Highlights Bar -->
+                <div class="cap-modal-highlights">
+                    <span class="cap-highlight-pill"><i class="fas fa-crosshairs"></i> Precise Coordinates</span>
+                    <span class="cap-highlight-pill"><i class="fas fa-sync"></i> Live Model Sync</span>
+                    <span class="cap-highlight-pill"><i class="fas fa-broom"></i> Clean Output</span>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Cable Tray Support Locator Modal -->
     <div class="service-modal-overlay" id="modal-cable-tray">
-        <div class="service-modal">
+        <div class="service-modal service-modal-enhanced">
             <button class="service-modal-close">&times;</button>
-            <div class="service-modal-content">
+            <div class="service-modal-header-bar">
+                <div class="service-modal-header-icon"><i class="fas fa-project-diagram"></i></div>
                 <h2 class="service-modal-title">Cable Tray Support Locator</h2>
-                <ul>
-                    <li>2D support GA drawing for Installation. Preserves correct associations between cable trays and their supporting members, ensuring consistency with the 3D model geometry and routing.</li>
-                    <li>Applies standardized layers, support symbols, tagging, and annotation styles for uniform output across projects.</li>
-                    <li>It will give you clear drawings with annotations</li>
-                    <li>Cable Tray Support Locator gives exact X-Y coordinates where it is going to be placed or installed at site resulting into easy understanding with site person.</li>
-                </ul>
+            </div>
+            <div class="service-modal-content">
+                <!-- Process Flow Diagram -->
+                <div class="cap-modal-flow">
+                    <div class="cap-flow-step">
+                        <div class="cap-flow-icon"><i class="fas fa-cube"></i></div>
+                        <span>3D Cable Tray Model</span>
+                    </div>
+                    <div class="cap-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="cap-flow-step cap-flow-engine">
+                        <div class="cap-flow-icon"><i class="fas fa-microchip"></i></div>
+                        <span>AI Extraction</span>
+                    </div>
+                    <div class="cap-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="cap-flow-step">
+                        <div class="cap-flow-icon"><i class="fas fa-file-alt"></i></div>
+                        <span>2D Support GA</span>
+                    </div>
+                </div>
+
+                <!-- Feature Cards -->
+                <div class="cap-modal-features">
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-link"></i></div>
+                        <h4>3D Model Consistency</h4>
+                        <p>Preserves correct associations between cable trays and their supporting members, ensuring consistency with 3D model geometry and routing.</p>
+                    </div>
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-layer-group"></i></div>
+                        <h4>Standardized Output</h4>
+                        <p>Applies standardized layers, support symbols, tagging, and annotation styles for uniform output across all projects.</p>
+                    </div>
+                    <div class="cap-feature-card">
+                        <div class="cap-feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4>Exact X-Y Coordinates</h4>
+                        <p>Provides exact X-Y coordinates for where supports will be placed or installed, enabling clear understanding with site personnel.</p>
+                    </div>
+                </div>
+
+                <!-- Key Highlights Bar -->
+                <div class="cap-modal-highlights">
+                    <span class="cap-highlight-pill"><i class="fas fa-crosshairs"></i> Exact Placement</span>
+                    <span class="cap-highlight-pill"><i class="fas fa-file-invoice"></i> Standardized Layers</span>
+                    <span class="cap-highlight-pill"><i class="fas fa-comment-dots"></i> Clear Annotations</span>
+                    <span class="cap-highlight-pill"><i class="fas fa-hard-hat"></i> Site-Ready</span>
+                </div>
             </div>
         </div>
     </div>

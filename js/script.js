@@ -405,34 +405,41 @@ readMoreBtns.forEach(btn => {
         if (modal) {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+
+            // Trigger infographic stat animations inside this modal
+            setTimeout(() => {
+                animateModalStats(modal);
+            }, 300);
         }
     });
 });
 
-// Close service modals
+// Close service modals + reset infographic animations
+function closeModal(overlay) {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    // Reset stat animations so they replay on next open
+    overlay.querySelectorAll('.stat-circle.animated').forEach(circle => {
+        circle.classList.remove('animated');
+        const numEl = circle.querySelector('.stat-number');
+        if (numEl && numEl.dataset.target) numEl.textContent = '0';
+    });
+}
+
 document.querySelectorAll('.service-modal-overlay').forEach(overlay => {
     const closeBtn = overlay.querySelector('.service-modal-close');
     if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+        closeBtn.addEventListener('click', () => closeModal(overlay));
     }
-    // Close on overlay click (outside modal)
     overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+        if (e.target === overlay) closeModal(overlay);
     });
 });
 
-// Close service modals on Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         document.querySelectorAll('.service-modal-overlay.active').forEach(overlay => {
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
+            closeModal(overlay);
         });
     }
 });
@@ -449,7 +456,76 @@ const animateOnScroll = () => {
             element.classList.add('animate-in');
         }
     });
+
+    // Animate process steps, stat items, and approach steps on scroll
+    const animatedElements = document.querySelectorAll('.process-step, .stat-item, .animated-step');
+    animatedElements.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100 && !el.classList.contains('visible')) {
+            setTimeout(() => {
+                el.classList.add('visible');
+            }, index * 150);
+        }
+    });
+
+    // Animate stat counters on scroll
+    const statCounters = document.querySelectorAll('.stat-number-counter');
+    statCounters.forEach(counter => {
+        const rect = counter.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50 && !counter.classList.contains('counted')) {
+            counter.classList.add('counted');
+            const target = parseInt(counter.dataset.target);
+            const suffix = counter.dataset.suffix || '';
+            const isStatic = counter.dataset.static;
+
+            if (isStatic) {
+                // Static text like "Autodesk" - no animation needed
+                return;
+            }
+
+            if (target === 0) return;
+
+            let current = 0;
+            const duration = 2000;
+            const stepTime = 30;
+            const totalSteps = duration / stepTime;
+            const step = Math.ceil(target / totalSteps);
+
+            const interval = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(interval);
+                }
+                counter.textContent = current + suffix;
+            }, stepTime);
+        }
+    });
 };
 
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
+
+// ===== Infographic Stat Counter Animation (Modal) =====
+function animateModalStats(modalEl) {
+    const circles = modalEl.querySelectorAll('.stat-circle');
+    circles.forEach(circle => {
+        if (circle.classList.contains('animated')) return;
+        circle.classList.add('animated');
+
+        const numberEl = circle.querySelector('.stat-number');
+        if (numberEl && numberEl.dataset.target) {
+            const target = parseInt(numberEl.dataset.target);
+            let current = 0;
+            const step = Math.ceil(target / 40);
+            const interval = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(interval);
+                }
+                numberEl.textContent = current;
+            }, 30);
+        }
+    });
+}

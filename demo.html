@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo – Inventive Bizsol</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    .engage-section{max-width:1000px;margin:0 auto 48px;padding:0 20px}
+    .engage-heading{text-align:center;margin-bottom:8px;font-size:26px;font-weight:700;color:#1E293B;font-family:'Montserrat',sans-serif}
+    .engage-subtitle{text-align:center;color:#64748B;font-size:15px;margin-bottom:36px}
+    .engage-timeline{display:flex;align-items:flex-start;justify-content:center;gap:0;position:relative}
+    .engage-phase{flex:1;max-width:220px;display:flex;flex-direction:column;align-items:center;position:relative;text-align:center}
+    .engage-icon-wrap{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;position:relative;z-index:2;box-shadow:0 6px 20px rgba(0,0,0,0.15);transition:transform .3s ease}
+    .engage-phase:hover .engage-icon-wrap{transform:scale(1.1)}
+    .engage-icon-wrap--assess{background:linear-gradient(135deg,#3B82F6,#2563EB)}
+    .engage-icon-wrap--pilot{background:linear-gradient(135deg,#F59E0B,#D97706)}
+    .engage-icon-wrap--deploy{background:linear-gradient(135deg,#10B981,#059669)}
+    .engage-icon-wrap--scale{background:linear-gradient(135deg,#8B5CF6,#7C3AED)}
+    .engage-step-num{position:absolute;top:-6px;right:-6px;width:24px;height:24px;border-radius:50%;background:#fff;color:#1E293B;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.12);z-index:3}
+    .engage-phase h4{margin:14px 0 6px;font-size:16px;font-weight:700;color:#1E293B}
+    .engage-phase p{font-size:13px;color:#64748B;line-height:1.5;margin:0;padding:0 4px}
+    .engage-connector{width:60px;min-width:40px;display:flex;align-items:center;justify-content:center;padding-top:34px}
+    .engage-connector i{font-size:22px;color:#CBD5E1}
+    .engage-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:10px}
+    .engage-tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:#F1F5F9;color:#475569;border:1px solid #E2E8F0}
+    @media(max-width:768px){
+        .engage-timeline{flex-direction:column;align-items:center;gap:8px}
+        .engage-connector{transform:rotate(90deg);width:auto;padding-top:0;min-width:unset}
+        .engage-phase{max-width:280px}
+    }
+    .know-more-wrap{text-align:center;margin:0 auto 36px;padding:0 20px}
+    .know-more-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 36px;border:none;border-radius:50px;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#fff;font-size:16px;font-weight:600;font-family:'Montserrat',sans-serif;cursor:pointer;box-shadow:0 6px 24px rgba(37,99,235,0.3);transition:all .3s ease;letter-spacing:0.3px}
+    .know-more-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,99,235,0.4)}
+    .know-more-btn i{font-size:14px;transition:transform .3s ease}
+    .know-more-btn.expanded i{transform:rotate(180deg)}
+    .infog-expandable{max-height:0;overflow:hidden;transition:max-height .6s ease,opacity .4s ease;opacity:0}
+    .infog-expandable.open{max-height:2000px;opacity:1}
+    .vid-email-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.7);backdrop-filter:blur(6px);z-index:10000;display:none;align-items:center;justify-content:center}
+    .vid-email-overlay.active{display:flex}
+    .vid-email-box{background:#fff;border-radius:16px;padding:36px 32px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.25);animation:vidPopIn .35s ease;position:relative}
+    .vid-email-close{position:absolute;top:12px;right:12px;width:32px;height:32px;border:none;border-radius:50%;background:#F1F5F9;color:#64748B;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+    .vid-email-close:hover{background:#E2E8F0;color:#1E293B}
+    @keyframes vidPopIn{from{opacity:0;transform:scale(0.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+    .vid-email-box .vid-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#fff;font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 6px 20px rgba(37,99,235,0.3)}
+    .vid-email-box h3{margin:0 0 6px;font-size:20px;font-weight:700;color:#1E293B;font-family:'Montserrat',sans-serif}
+    .vid-email-box p{margin:0 0 20px;font-size:14px;color:#64748B;line-height:1.5}
+    .vid-email-form{display:flex;gap:8px}
+    .vid-email-input{flex:1;padding:12px 16px;border:2px solid #E2E8F0;border-radius:10px;font-size:14px;font-family:'Poppins',sans-serif;outline:none;transition:border-color .2s}
+    .vid-email-input:focus{border-color:#3B82F6}
+    .vid-email-input.error{border-color:#EF4444}
+    .vid-email-submit{padding:12px 24px;border:none;border-radius:10px;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#fff;font-size:14px;font-weight:600;font-family:'Montserrat',sans-serif;cursor:pointer;white-space:nowrap;transition:all .2s}
+    .vid-email-submit:hover{box-shadow:0 4px 16px rgba(37,99,235,0.4);transform:translateY(-1px)}
+    @media(max-width:480px){.vid-email-form{flex-direction:column}.vid-email-box{padding:28px 20px}}
+    .vid-gate-wrap{position:relative}
+    .vid-gate{position:absolute;inset:0;background:rgba(15,23,42,0.85);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:5;cursor:pointer;border-radius:14px}
+    .vid-gate.active{display:flex}
+    .vid-gate-icon{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:0 6px 20px rgba(37,99,235,0.4)}
+    .vid-gate h4{color:#fff;font-size:16px;font-weight:600;margin:0 0 6px;font-family:'Montserrat',sans-serif}
+    .vid-gate p{color:#94A3B8;font-size:13px;margin:0}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <!-- Top Bar -->
+        <div class="header-top-bar">
+            <div class="header-top-container">
+                <div class="header-top-left"></div>
+                <div class="header-top-center">
+                    <a href="mailto:inquiry@inventivebizsol.com" class="email-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>inquiry@inventivebizsol.com</span>
+                    </a>
+                </div>
+                <div class="header-top-right">
+                    <a href="https://www.linkedin.com/company/inventive-business-solutions-pvt-ltd/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="header-main">
+            <div class="header-main-container">
+                <div class="logo-wrapper">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo-01.png" alt="Inventive Bizsol">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-menu" id="nav-menu">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="solutions.html" class="nav-link">Solution</a></li>
+                        <li class="nav-item"><a href="our-solutions.html" class="nav-link">Solutions</a></li>
+                        <li class="nav-item"><a href="demo.html" class="nav-link active">Demo</a></li>
+                        <li class="nav-item"><a href="demo1.html" class="nav-link">Demo1</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    </ul>
+                    <!-- Mobile Menu Toggle -->
+                    <div class="mobile-toggle" id="hamburger">
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu-wrap" id="mobileMenu">
+            <ul class="mobile-nav-menu">
+                <li><a href="index.html" class="mobile-menu-item">Home</a></li>
+                <li><a href="about.html" class="mobile-menu-item">About Us</a></li>
+                <li><a href="services.html" class="mobile-menu-item">Services</a></li>
+                <li><a href="solutions.html" class="mobile-menu-item">Solution</a></li>
+                <li><a href="our-solutions.html" class="mobile-menu-item">Solutions</a></li>
+                <li><a href="demo.html" class="mobile-menu-item active">Demo</a></li>
+                <li><a href="demo1.html" class="mobile-menu-item">Demo1</a></li>
+                <li><a href="contact.html" class="mobile-menu-item">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Solutions Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-bg" style="background-image: url('images/AI_solutions.jpg')"></div>
+        <div class="about-hero-overlay">
+            <h1>Solutions</h1>
+        </div>
+        <div class="about-hero-wave">
+            <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+                <path fill="#ffffff" d="M0,64 C120,100 240,20 360,64 C480,108 600,20 720,64 C840,108 960,20 1080,64 C1200,108 1320,20 1440,64 L1440,150 L0,150 Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Solutions Content Section -->
+    <section class="about-content-section">
+        <div class="container">
+            <div class="about-content-grid">
+                <div class="about-content-text">
+                    <h2 class="about-content-title">Our Solutions</h2>
+                    <p>At Inventive Bizsol, we deliver cutting-edge solutions that combine <strong>AI, automation, and engineering expertise</strong> to transform how businesses operate. Our solutions are designed to move you from concept to production in days, not months.</p>
+                    <p>Whether you need to streamline your engineering workflows, automate repetitive CAD tasks, or implement digital twin technology, our team has the expertise and tools to deliver results that matter.</p>
+                </div>
+                <div class="about-content-video">
+                    <img src="images/Service-Page-Header-Mobile-View_new.png" alt="Solutions" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Tabs -->
+    <section class="sol-tabs-section">
+        <div class="container">
+            <h2 class="sol-tabs-heading">Explore Our Solutions</h2>
+            <p class="sol-tabs-subtitle">Click on a solution to explore its capabilities, architecture, and business impact</p>
+            <div class="sol-tabs">
+                <button class="sol-tab" data-tab="eit">
+                    <div class="sol-tab-icon-wrap">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="sol-tab-text">
+                        <span class="sol-tab-label">EIT Support Extraction Platform</span>
+                        <span class="sol-tab-desc">AI-powered extraction of EIT supports from 3D models</span>
+                    </div>
+                    <i class="fas fa-chevron-down sol-tab-arrow"></i>
+                </button>
+                <button class="sol-tab" data-tab="piping-ga">
+                    <div class="sol-tab-icon-wrap">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div class="sol-tab-text">
+                        <span class="sol-tab-label">AI Powered 2D Piping GA from Plant 3D</span>
+                        <span class="sol-tab-desc">Automated 2D GA drawings from Plant 3D piping models</span>
+                    </div>
+                    <i class="fas fa-chevron-down sol-tab-arrow"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TAB 1: EIT Support Extraction Platform (Infographic) ===== -->
+    <div class="sol-tab-content" id="tab-eit">
+        <div class="infog">
+            <!-- Infographic Header -->
+            <div class="infog-header">
+                <div class="infog-header-badge"><i class="fas fa-microchip"></i> AI&#8209;Powered Engineering Platform</div>
+                <h1 class="infog-title">The Evolution of EIT Support Fabrication</h1>
+                <p class="infog-subtitle">From Legacy Manual Drafting to AI&#8209;Driven Generation</p>
+            </div>
+
+            <!-- Process Flow Diagram -->
+            <div class="infog-flow-section">
+                <div class="infog-flow">
+                    <div class="infog-flow-node">
+                        <div class="infog-flow-icon infog-flow-icon--input"><i class="fas fa-cube"></i></div>
+                        <span>3D Coordination Model<br><small>(Navisworks)</small></span>
+                    </div>
+                    <div class="eit-flow-arrow"><div class="eit-flow-arrow-line"></div><i class="fas fa-chevron-right"></i></div>
+                    <div class="infog-flow-node">
+                        <div class="infog-flow-icon infog-flow-icon--engine"><i class="fas fa-microchip"></i></div>
+                        <span>AI Extraction<br><small>Engine</small></span>
+                    </div>
+                    <div class="eit-flow-arrow"><div class="eit-flow-arrow-line"></div><i class="fas fa-chevron-right"></i></div>
+                    <div class="infog-flow-node">
+                        <div class="infog-flow-icon infog-flow-icon--process"><i class="fas fa-tags"></i></div>
+                        <span>Classify &amp;<br><small>Validate</small></span>
+                    </div>
+                    <div class="eit-flow-arrow"><div class="eit-flow-arrow-line"></div><i class="fas fa-chevron-right"></i></div>
+                    <div class="infog-flow-node">
+                        <div class="infog-flow-icon infog-flow-icon--output"><i class="fas fa-file-export"></i></div>
+                        <span>Fabrication&#8209;Ready<br><small>DWG / PDF Output</small></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two-Column: Legacy vs AI -->
+            <div class="infog-columns">
+                <!-- LEFT: Legacy Workflow -->
+                <div class="infog-col infog-col--legacy">
+                    <div class="infog-col-header infog-col-header--red">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <h2>The Heavy Ecosystem Trap</h2>
+                            <span class="infog-col-tag">(Legacy Workflow)</span>
+                        </div>
+                    </div>
+
+                    <div class="infog-item">
+                        <div class="infog-item-icon"><i class="fas fa-camera"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Manual &lsquo;Snapshot and Redraw&rsquo;</h4>
+                            <p>Engineers manually identify EIT supports using screenshots, visual inspection, and manual drafting in CAD tools &mdash; one by one.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-item">
+                        <div class="infog-item-icon"><i class="fas fa-pen-ruler"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Inefficient Manual Drafting</h4>
+                            <p>Strong dependency on experienced designers diverted to low&#8209;value tasks, creating bottlenecks dictated by human headcount.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-item">
+                        <div class="infog-item-icon"><i class="fas fa-lock"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Software Lock&#8209;In &amp; Data Loss</h4>
+                            <p>Dependency on complex software chains (Tekla / SP3D / E3D) with high risk of missed or inconsistent supports and lost traceability.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-legacy-metrics">
+                        <div class="infog-badge infog-badge--red">
+                            <span class="infog-badge-value">80%</span>
+                            <span class="infog-badge-label">Time Wasted on Repetitive Drafting</span>
+                        </div>
+                    </div>
+
+                    <div class="infog-rework-box">
+                        <i class="fas fa-redo-alt"></i>
+                        <div>
+                            <h4>The Rework Loop</h4>
+                            <p>Any upstream model change forces a manual restart of the entire drafting process from scratch, causing rework and delays.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CENTER: Key Metrics -->
+                <div class="infog-center-metrics">
+                    <div class="infog-metric-badge">
+                        <div class="infog-metric-circle infog-metric-circle--blue">
+                            <span>60%</span>
+                        </div>
+                        <h4>Faster Delivery</h4>
+                        <p>Drawings produced at the speed of computing, reducing schedule without linear increases in staffing.</p>
+                    </div>
+                    <div class="infog-metric-badge">
+                        <div class="infog-metric-circle infog-metric-circle--green">
+                            <span>70%</span>
+                        </div>
+                        <h4>Cost Saving</h4>
+                        <p>Significant reduction in manual extraction effort and engineering hours across projects.</p>
+                    </div>
+                    <div class="infog-metric-badge">
+                        <div class="infog-metric-circle infog-metric-circle--cyan">
+                            <span>ZERO</span>
+                        </div>
+                        <h4>Interpretation Bias</h4>
+                        <p>Automated extraction removes human variance by enforcing consistent logic&#8209;driven outputs.</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT: AI-Driven Solution -->
+                <div class="infog-col infog-col--ai">
+                    <div class="infog-col-header infog-col-header--green">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <h2>Intelligent Extraction &amp; Generation</h2>
+                            <span class="infog-col-tag">(AI&#8209;Driven Solution)</span>
+                        </div>
+                    </div>
+
+                    <div class="infog-item infog-item--ai">
+                        <div class="infog-item-icon infog-item-icon--green"><i class="fas fa-user-check"></i></div>
+                        <div class="infog-item-body">
+                            <h4>80% Time Focused on Validation</h4>
+                            <p>Engineers redirected to high&#8209;value tasks &mdash; optimization and design intent rather than tedious geometry extraction.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-item infog-item--ai">
+                        <div class="infog-item-icon infog-item-icon--green"><i class="fas fa-database"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Native Data Ingest from Navisworks</h4>
+                            <p>Directly reads 3D coordination models, electrical, instrumentation, and telecom model data without intermediate exports.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-item infog-item--ai">
+                        <div class="infog-item-icon infog-item-icon--green"><i class="fas fa-cogs"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Detect &gt; Analyze &gt; Generate</h4>
+                            <p>Automatically scans the model, classifies supports by type, discipline, and configuration, then generates standardized drawings.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-ai-metrics">
+                        <div class="infog-badge infog-badge--green">
+                            <span class="infog-badge-value">100%</span>
+                            <span class="infog-badge-label">Consistent, Fabrication&#8209;Ready</span>
+                        </div>
+                    </div>
+
+                    <div class="infog-ai-box">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Algorithm&#8209;Enforced Accuracy</h4>
+                            <p>First drawing matches the model exactly &mdash; EIT support drawings (DWG/PDF), support schedules, and structured data for fabrication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div class="vid-gate-wrap" style="max-width:900px;margin:0 auto 40px;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.12)">
+                <div class="vid-gate" data-for="video-eit">
+                    <div class="vid-gate-icon"><i class="fas fa-envelope"></i></div>
+                    <h4>Enter your email to continue watching</h4>
+                    <p>Click here to provide your email</p>
+                </div>
+                <video id="video-eit" controls playsinline style="width:100%;display:block">
+                    <source src="videos/Samanvay-AI.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Engagement Model -->
+            <div class="engage-section">
+                <h2 class="engage-heading"><i class="fas fa-handshake" style="color:#3B82F6;margin-right:10px"></i>Engagement Model</h2>
+                <p class="engage-subtitle">A structured, low&#8209;risk path from evaluation to full&#8209;scale deployment</p>
+                <div class="engage-timeline">
+                    <div class="engage-phase">
+                        <div class="engage-icon-wrap engage-icon-wrap--assess">
+                            <span class="engage-step-num">1</span>
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Assess</h4>
+                        <p>Evaluate current EIT workflows, identify pain points, and define success metrics</p>
+                        <div class="engage-tags">
+                            <span class="engage-tag">Workflow Audit</span>
+                            <span class="engage-tag">Gap Analysis</span>
+                        </div>
+                    </div>
+                    <div class="engage-connector"><i class="fas fa-chevron-right"></i></div>
+                    <div class="engage-phase">
+                        <div class="engage-icon-wrap engage-icon-wrap--pilot">
+                            <span class="engage-step-num">2</span>
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Pilot</h4>
+                        <p>Run a focused proof&#8209;of&#8209;concept on a sample project module to validate results</p>
+                        <div class="engage-tags">
+                            <span class="engage-tag">PoC</span>
+                            <span class="engage-tag">Benchmarking</span>
+                        </div>
+                    </div>
+                    <div class="engage-connector"><i class="fas fa-chevron-right"></i></div>
+                    <div class="engage-phase">
+                        <div class="engage-icon-wrap engage-icon-wrap--deploy">
+                            <span class="engage-step-num">3</span>
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Deploy</h4>
+                        <p>Roll out across full project scope with team training and system integration</p>
+                        <div class="engage-tags">
+                            <span class="engage-tag">Go&#8209;Live</span>
+                            <span class="engage-tag">Training</span>
+                        </div>
+                    </div>
+                    <div class="engage-connector"><i class="fas fa-chevron-right"></i></div>
+                    <div class="engage-phase">
+                        <div class="engage-icon-wrap engage-icon-wrap--scale">
+                            <span class="engage-step-num">4</span>
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h4>Scale</h4>
+                        <p>Expand to additional projects, disciplines, and multi&#8209;site deployments</p>
+                        <div class="engage-tags">
+                            <span class="engage-tag">Enterprise</span>
+                            <span class="engage-tag">Multi&#8209;Site</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Know More Button -->
+            <div class="know-more-wrap">
+                <button class="know-more-btn" onclick="toggleKnowMore(this)"><i class="fas fa-chevron-down"></i> Know More</button>
+            </div>
+
+            <!-- Expandable Section -->
+            <div class="infog-expandable">
+                <!-- Inputs & Outputs Visual -->
+                <div class="infog-io-section">
+                    <div class="infog-io-card infog-io-card--input">
+                        <h3><i class="fas fa-sign-in-alt"></i> Inputs</h3>
+                        <ul>
+                            <li><i class="fas fa-cube"></i> 3D coordination models (e.g., Navisworks)</li>
+                            <li><i class="fas fa-bolt"></i> Electrical, instrumentation &amp; telecom model data</li>
+                            <li><i class="fas fa-book"></i> Project standards and support libraries</li>
+                        </ul>
+                    </div>
+                    <div class="infog-io-engine">
+                        <div class="infog-io-engine-icon"><i class="fas fa-microchip"></i></div>
+                        <span>AI Platform</span>
+                    </div>
+                    <div class="infog-io-card infog-io-card--output">
+                        <h3><i class="fas fa-sign-out-alt"></i> Outputs</h3>
+                        <ul>
+                            <li><i class="fas fa-file-alt"></i> EIT support drawings (DWG / PDF)</li>
+                            <li><i class="fas fa-list-alt"></i> Support schedules and lists</li>
+                            <li><i class="fas fa-database"></i> Structured data for detailing &amp; fabrication</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Use Cases & Industries -->
+                <div class="infog-footer-section">
+                    <div class="infog-scale-bar">
+                        <h3><i class="fas fa-bullseye"></i> Typical Use Cases</h3>
+                        <div class="infog-scale-items">
+                            <div class="infog-scale-item">
+                                <i class="fas fa-hard-hat"></i>
+                                <span>EPC Detailed Engineering</span>
+                            </div>
+                            <div class="infog-scale-item">
+                                <i class="fas fa-industry"></i>
+                                <span>Fabrication Planning</span>
+                            </div>
+                            <div class="infog-scale-item">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Design Revisions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infog-action-plan">
+                        <h3><i class="fas fa-rocket"></i> Future Scalability</h3>
+                        <ul>
+                            <li><i class="fas fa-wind"></i> HVAC Duct Supports</li>
+                            <li><i class="fas fa-building"></i> Living Quarters Modules</li>
+                            <li><i class="fas fa-server"></i> Datacenter Infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Industries Served -->
+                <div class="infog-industries">
+                    <h3>Industries Served</h3>
+                    <div class="infog-industry-tags">
+                        <span><i class="fas fa-oil-can"></i> Oil &amp; Gas</span>
+                        <span><i class="fas fa-bolt"></i> Power</span>
+                        <span><i class="fas fa-water"></i> Water &amp; Wastewater</span>
+                        <span><i class="fas fa-flask"></i> Chemicals</span>
+                        <span><i class="fas fa-hard-hat"></i> Industrial EPC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TAB 2: AI Powered 2D Piping GA from Plant 3D (Infographic) ===== -->
+    <div class="sol-tab-content" id="tab-piping-ga">
+        <div class="infog">
+            <!-- Infographic Header -->
+            <div class="infog-header">
+                <div class="infog-header-badge"><i class="fas fa-drafting-compass"></i> Plant 3D GA Automation Tool</div>
+                <h1 class="infog-title">AI Powered 2D Piping GA from Plant 3D</h1>
+                <p class="infog-subtitle">Automated 2D GA Extraction &mdash; From Model to Production&#8209;Ready Drawings in Minutes</p>
+            </div>
+
+            <!-- Process Flow Diagram -->
+            <div class="infog-flow-section">
+                <div class="infog-flow">
+                    <div class="infog-flow-node">
+                        <div class="infog-flow-icon infog-flow-icon--input"><i class="fas fa-industry"></i></div>
+                        <span>Plant 3D<br><small>Piping Model</small></span>
+                    </div>
+                    <div class="eit-flow-arrow"><div class="eit-flow-arrow-line"></div><i class="fas fa-chevron-right"></i></div>
+                    <div class="infog-flow-node">
+                        <div class="infog-flow-icon infog-flow-icon--engine"><i class="fas fa-ruler-combined"></i></div>
+                        <span>Standards &amp;<br><small>Auto&#8209;Tagging</small></span>
+                    </div>
+                    <div class="eit-flow-arrow"><div class="eit-flow-arrow-line"></div><i class="fas fa-chevron-right"></i></div>
+                    <div class="infog-flow-node">
+                        <div class="infog-flow-icon infog-flow-icon--process"><i class="fas fa-check-double"></i></div>
+                        <span>Quality Check<br><small>&amp; Sanitize</small></span>
+                    </div>
+                    <div class="eit-flow-arrow"><div class="eit-flow-arrow-line"></div><i class="fas fa-chevron-right"></i></div>
+                    <div class="infog-flow-node">
+                        <div class="infog-flow-icon infog-flow-icon--output"><i class="fas fa-file-alt"></i></div>
+                        <span>Production&#8209;Ready<br><small>2D GA Drawing</small></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two-Column: Legacy vs AI -->
+            <div class="infog-columns">
+                <!-- LEFT: Legacy Workflow -->
+                <div class="infog-col infog-col--legacy">
+                    <div class="infog-col-header infog-col-header--red">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <h2>Traditional Manual Process</h2>
+                            <span class="infog-col-tag">(Legacy Workflow)</span>
+                        </div>
+                    </div>
+
+                    <div class="infog-item">
+                        <div class="infog-item-icon"><i class="fas fa-clock"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Long Turnaround Time</h4>
+                            <p>Manual conversion from Plant 3D to 2D GA requires extensive man&#8209;hours with time&#8209;intensive quality sanitization and manual formatting.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-item">
+                        <div class="infog-item-icon"><i class="fas fa-random"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Inconsistent Output Quality</h4>
+                            <p>Output varies across drawings and projects due to dependency on individual draftsmen skill levels and manual standards application.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-item">
+                        <div class="infog-item-icon"><i class="fas fa-user-tie"></i></div>
+                        <div class="infog-item-body">
+                            <h4>High Skilled Resource Dependency</h4>
+                            <p>Heavy reliance on experienced draftsmen to manually apply layers, annotations, tagging, and drawing standards for each deliverable.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-legacy-metrics">
+                        <div class="infog-badge infog-badge--red">
+                            <span class="infog-badge-value">85%</span>
+                            <span class="infog-badge-label">Time Spent on Manual Formatting</span>
+                        </div>
+                    </div>
+
+                    <div class="infog-rework-box">
+                        <i class="fas fa-redo-alt"></i>
+                        <div>
+                            <h4>3D&#8209;to&#8209;2D Discrepancy Loop</h4>
+                            <p>Every model revision triggers complete manual rework with no automated traceability between model and 2D deliverables.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CENTER: Key Metrics -->
+                <div class="infog-center-metrics">
+                    <div class="infog-metric-badge">
+                        <div class="infog-metric-circle infog-metric-circle--blue">
+                            <span>70%</span>
+                        </div>
+                        <h4>Faster Delivery</h4>
+                        <p>Up to 70% faster with standardized templates, auto tagging, and built&#8209;in quality assurance.</p>
+                    </div>
+                    <div class="infog-metric-badge">
+                        <div class="infog-metric-circle infog-metric-circle--green">
+                            <span>60%</span>
+                        </div>
+                        <h4>Cost Reduction</h4>
+                        <p>Elimination of manual drafting resources and rework cycles leads to significant cost savings.</p>
+                    </div>
+                    <div class="infog-metric-badge">
+                        <div class="infog-metric-circle infog-metric-circle--cyan">
+                            <span>ZERO</span>
+                        </div>
+                        <h4>3D&#8209;to&#8209;2D Gaps</h4>
+                        <p>True pipe routing, elevations, orientations, and component placement with zero discrepancies.</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT: AI-Driven Solution -->
+                <div class="infog-col infog-col--ai">
+                    <div class="infog-col-header infog-col-header--green">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <h2>Automated GA Generation</h2>
+                            <span class="infog-col-tag">(AI&#8209;Driven Solution)</span>
+                        </div>
+                    </div>
+
+                    <div class="infog-item infog-item--ai">
+                        <div class="infog-item-icon infog-item-icon--green"><i class="fas fa-industry"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Works Directly in Plant 3D</h4>
+                            <p>No model export needed. Reads piping data natively, preserving full geometry, coordinates, and attributes.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-item infog-item--ai">
+                        <div class="infog-item-icon infog-item-icon--green"><i class="fas fa-ruler-combined"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Auto&#8209;Apply Drawing Standards</h4>
+                            <p>Layers, line types, annotation rules, tagging, and scaling applied automatically for issue&#8209;ready output every time.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-item infog-item--ai">
+                        <div class="infog-item-icon infog-item-icon--green"><i class="fas fa-magic"></i></div>
+                        <div class="infog-item-body">
+                            <h4>Production&#8209;Ready in One Click</h4>
+                            <p>Auto&#8209;generates GA drawings with tagging, layers, annotations, and built&#8209;in quality checks. Easy revisions included.</p>
+                        </div>
+                    </div>
+
+                    <div class="infog-ai-metrics">
+                        <div class="infog-badge infog-badge--green">
+                            <span class="infog-badge-value">100%</span>
+                            <span class="infog-badge-label">Model&#8209;Aligned, Production&#8209;Ready</span>
+                        </div>
+                    </div>
+
+                    <div class="infog-ai-box">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Revision&#8209;Friendly Regeneration</h4>
+                            <p>When the 3D model changes, drawings regenerate automatically with full traceability &mdash; eliminating manual rework.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div class="vid-gate-wrap" style="max-width:900px;margin:0 auto 40px;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.12)">
+                <div class="vid-gate" data-for="video-piping">
+                    <div class="vid-gate-icon"><i class="fas fa-envelope"></i></div>
+                    <h4>Enter your email to continue watching</h4>
+                    <p>Click here to provide your email</p>
+                </div>
+                <video id="video-piping" controls playsinline style="width:100%;display:block">
+                    <source src="videos/Samanvay-AI.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Engagement Model -->
+            <div class="engage-section">
+                <h2 class="engage-heading"><i class="fas fa-handshake" style="color:#3B82F6;margin-right:10px"></i>Engagement Model</h2>
+                <p class="engage-subtitle">A structured, low&#8209;risk path from evaluation to full&#8209;scale deployment</p>
+                <div class="engage-timeline">
+                    <div class="engage-phase">
+                        <div class="engage-icon-wrap engage-icon-wrap--assess">
+                            <span class="engage-step-num">1</span>
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Assess</h4>
+                        <p>Evaluate current drawing man&#8209;hours, identify bottlenecks, and define automation goals</p>
+                        <div class="engage-tags">
+                            <span class="engage-tag">Workflow Audit</span>
+                            <span class="engage-tag">Gap Analysis</span>
+                        </div>
+                    </div>
+                    <div class="engage-connector"><i class="fas fa-chevron-right"></i></div>
+                    <div class="engage-phase">
+                        <div class="engage-icon-wrap engage-icon-wrap--pilot">
+                            <span class="engage-step-num">2</span>
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Pilot</h4>
+                        <p>Run AI extraction on a sample piping module to benchmark speed and accuracy</p>
+                        <div class="engage-tags">
+                            <span class="engage-tag">PoC</span>
+                            <span class="engage-tag">Benchmarking</span>
+                        </div>
+                    </div>
+                    <div class="engage-connector"><i class="fas fa-chevron-right"></i></div>
+                    <div class="engage-phase">
+                        <div class="engage-icon-wrap engage-icon-wrap--deploy">
+                            <span class="engage-step-num">3</span>
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Deploy</h4>
+                        <p>Implement across all piping deliverables with team training and Plant 3D integration</p>
+                        <div class="engage-tags">
+                            <span class="engage-tag">Go&#8209;Live</span>
+                            <span class="engage-tag">Training</span>
+                        </div>
+                    </div>
+                    <div class="engage-connector"><i class="fas fa-chevron-right"></i></div>
+                    <div class="engage-phase">
+                        <div class="engage-icon-wrap engage-icon-wrap--scale">
+                            <span class="engage-step-num">4</span>
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h4>Scale</h4>
+                        <p>Expand to additional disciplines, projects, and multi&#8209;site deployments</p>
+                        <div class="engage-tags">
+                            <span class="engage-tag">Enterprise</span>
+                            <span class="engage-tag">Multi&#8209;Site</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Know More Button -->
+            <div class="know-more-wrap">
+                <button class="know-more-btn" onclick="toggleKnowMore(this)"><i class="fas fa-chevron-down"></i> Know More</button>
+            </div>
+
+            <!-- Expandable Section -->
+            <div class="infog-expandable">
+                <!-- Inputs & Outputs Visual -->
+                <div class="infog-io-section">
+                    <div class="infog-io-card infog-io-card--input">
+                        <h3><i class="fas fa-sign-in-alt"></i> Inputs</h3>
+                        <ul>
+                            <li><i class="fas fa-industry"></i> Plant 3D piping model data</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Instrument objects &amp; attributes</li>
+                            <li><i class="fas fa-book"></i> Project drawing standards &amp; templates</li>
+                        </ul>
+                    </div>
+                    <div class="infog-io-engine">
+                        <div class="infog-io-engine-icon"><i class="fas fa-drafting-compass"></i></div>
+                        <span>AI Engine</span>
+                    </div>
+                    <div class="infog-io-card infog-io-card--output">
+                        <h3><i class="fas fa-sign-out-alt"></i> Outputs</h3>
+                        <ul>
+                            <li><i class="fas fa-drafting-compass"></i> Production&#8209;ready 2D Piping GA drawings</li>
+                            <li><i class="fas fa-map-marked-alt"></i> Instrument location drawings</li>
+                            <li><i class="fas fa-th"></i> Piping &amp; cable tray support locator drawings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Key Capabilities -->
+                <div class="infog-footer-section">
+                    <div class="infog-scale-bar">
+                        <h3><i class="fas fa-star"></i> Key Capabilities</h3>
+                        <div class="infog-scale-items">
+                            <div class="infog-scale-item">
+                                <i class="fas fa-drafting-compass"></i>
+                                <span>2D Piping GA</span>
+                            </div>
+                            <div class="infog-scale-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Instrument Location Drawing</span>
+                            </div>
+                            <div class="infog-scale-item">
+                                <i class="fas fa-th"></i>
+                                <span>Piping Support Locator</span>
+                            </div>
+                            <div class="infog-scale-item">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Cable Tray Support Locator</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infog-action-plan">
+                        <h3><i class="fas fa-clipboard-list"></i> Action Plan for Modernization</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Assess Current Drawing Man&#8209;Hours</li>
+                            <li><i class="fas fa-check"></i> Pilot AI Extraction on a Project Module</li>
+                            <li><i class="fas fa-check"></i> Implement Across All Piping Deliverables</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Industries Served -->
+                <div class="infog-industries">
+                    <h3>Industries Served</h3>
+                    <div class="infog-industry-tags">
+                        <span><i class="fas fa-oil-can"></i> Oil &amp; Gas</span>
+                        <span><i class="fas fa-bolt"></i> Power</span>
+                        <span><i class="fas fa-water"></i> Water &amp; Wastewater</span>
+                        <span><i class="fas fa-flask"></i> Chemicals</span>
+                        <span><i class="fas fa-hard-hat"></i> Industrial EPC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spacer before footer -->
+    <div class="sol-footer-spacer">
+        <div class="sol-divider"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="images/logo-01.png" alt="Inventive Bizsol" class="footer-logo">
+                    <p class="footer-tagline">Continuously drive progress by embracing modern technologies and creative solutions to enhance engineering design and automation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#bim-services">BIM Services</a></li>
+                        <li><a href="services.html#speed-bim">Speed BIM</a></li>
+                        <li><a href="services.html#engineering-services">Engineering Services</a></li>
+                        <li><a href="services.html#cad-automation">CAD Automation</a></li>
+                        <li><a href="services.html#digitalization">Digitalization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions.html">EIT Support Extraction Platform</a></li>
+                        <li><a href="solutions.html">AI Powered 2D Piping GA from Plant 3D</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <p class="footer-email">inquiry@inventivebizsol.com</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/inventive-business-solutions-pvt-ltd" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@Inventivebizsol" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy;Copyright Inventive 2026. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Autodesk Badge -->
+    <div class="fixed-autodesk-badge">
+        <img src="images/autodesk-authorized-developer.png" alt="Autodesk Authorized Developer">
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Video Email Popup -->
+    <div class="vid-email-overlay" id="vidEmailOverlay">
+        <div class="vid-email-box">
+            <button class="vid-email-close" id="vidEmailClose"><i class="fas fa-times"></i></button>
+            <div class="vid-icon"><i class="fas fa-play-circle"></i></div>
+            <h3>Continue Watching</h3>
+            <p>Enter your email to unlock the full video demo</p>
+            <form class="vid-email-form" id="vidEmailForm">
+                <input type="email" class="vid-email-input" id="vidEmailInput" placeholder="your@email.com" required>
+                <button type="submit" class="vid-email-submit"><i class="fas fa-arrow-right"></i> Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+    function toggleKnowMore(btn){
+        var panel=btn.closest('.know-more-wrap').nextElementSibling;
+        var isOpen=panel.classList.contains('open');
+        panel.classList.toggle('open');
+        btn.classList.toggle('expanded');
+        btn.innerHTML=isOpen
+            ?'<i class="fas fa-chevron-down"></i> Know More'
+            :'<i class="fas fa-chevron-up"></i> Show Less';
+    }
+
+    (function(){
+        var overlay=document.getElementById('vidEmailOverlay');
+        var form=document.getElementById('vidEmailForm');
+        var input=document.getElementById('vidEmailInput');
+        var activeVideo=null;
+        var gatedVideo=null;
+        var triggered={};
+
+        function getGate(vid){
+            return vid?document.querySelector('.vid-gate[data-for="'+vid.id+'"]'):null;
+        }
+
+        function showEmailPopup(vid){
+            activeVideo=vid;
+            overlay.classList.add('active');
+            document.body.style.overflow='hidden';
+            setTimeout(function(){input.focus()},350);
+        }
+
+        function setupVideo(vid){
+            if(!vid) return;
+            vid.addEventListener('timeupdate',function(){
+                if(!triggered[vid.id] && vid.currentTime>=5){
+                    triggered[vid.id]=true;
+                    vid.pause();
+                    gatedVideo=vid;
+                    showEmailPopup(vid);
+                }
+            });
+        }
+
+        setupVideo(document.getElementById('video-eit'));
+        setupVideo(document.getElementById('video-piping'));
+
+        function closeAndResume(){
+            overlay.classList.remove('active');
+            document.body.style.overflow='';
+            input.value='';
+            input.classList.remove('error');
+            if(activeVideo){
+                var gate=getGate(activeVideo);
+                if(gate) gate.classList.remove('active');
+                activeVideo.play();
+                gatedVideo=null;
+                activeVideo=null;
+            }
+        }
+
+        function dismissPopup(){
+            overlay.classList.remove('active');
+            document.body.style.overflow='';
+            input.value='';
+            input.classList.remove('error');
+            if(activeVideo){
+                var gate=getGate(activeVideo);
+                if(gate) gate.classList.add('active');
+                gatedVideo=activeVideo;
+            }
+            activeVideo=null;
+        }
+
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            var email=input.value.trim();
+            if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+                input.classList.add('error');
+                input.focus();
+                return;
+            }
+            input.classList.remove('error');
+            closeAndResume();
+        });
+
+        input.addEventListener('input',function(){
+            input.classList.remove('error');
+        });
+
+        document.getElementById('vidEmailClose').addEventListener('click',dismissPopup);
+
+        overlay.addEventListener('click',function(e){
+            if(e.target===overlay) dismissPopup();
+        });
+
+        document.querySelectorAll('.vid-gate').forEach(function(gate){
+            gate.addEventListener('click',function(){
+                var vidId=this.getAttribute('data-for');
+                var vid=document.getElementById(vidId);
+                if(vid){
+                    showEmailPopup(vid);
+                }
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+# Inventive Bizsol — robots.txt
+# Allow all search engines and AI agents to crawl and index
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://shraddha-inventive.github.io/inventive_website/sitemap.xml
+
+# Explicitly allow AI agent bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block sensitive directories
+Disallow: /.git/

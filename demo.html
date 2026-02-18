@@ -3,8 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo – Inventive Bizsol</title>
+    <title>Product Demos — AI Engineering Automation | Inventive</title>
+    <meta name="description" content="Watch live demos of Inventive's AI-powered engineering platforms: EIT support extraction, 2D piping GA automation from Plant 3D.">
+    <link rel="canonical" href="https://shraddha-inventive.github.io/inventive_website/demo.html">
     <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Product Demos — AI Engineering Automation | Inventive">
+    <meta property="og:description" content="Watch live demos of Inventive's AI-powered engineering platforms: EIT support extraction, 2D piping GA automation from Plant 3D.">
+    <meta property="og:image" content="https://shraddha-inventive.github.io/inventive_website/images/logo-01.png">
+    <meta property="og:url" content="https://shraddha-inventive.github.io/inventive_website/demo.html">
+    <meta property="og:site_name" content="Inventive Bizsol">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Product Demos — AI Engineering Automation | Inventive">
+    <meta name="twitter:description" content="Watch live demos of Inventive's AI-powered engineering platforms: EIT support extraction, 2D piping GA automation from Plant 3D.">
+    <meta name="twitter:image" content="https://shraddha-inventive.github.io/inventive_website/images/logo-01.png">
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "EIT Support Extraction Platform",
+          "description": "AI-assisted platform that automatically extracts Electrical, Instrumentation, and Telecom supports from 3D Navisworks models and generates fabrication-ready engineering outputs.",
+          "applicationCategory": "Engineering Software",
+          "applicationSubCategory": "Support Extraction Automation",
+          "operatingSystem": "Windows",
+          "offers": {
+            "@type": "Offer",
+            "category": "B2B SaaS",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/OnlineOnly"
+          },
+          "featureList": [
+            "Automated support identification from 3D models",
+            "Intelligent classification by discipline",
+            "Fabrication-ready DWG/PDF output",
+            "Change-friendly regeneration",
+            "Navisworks integration"
+          ],
+          "creator": {
+            "@type": "Organization",
+            "name": "Inventive Business Solutions Pvt Ltd"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "AI Powered 2D Piping GA from Plant 3D",
+          "description": "Automated 2D GA extraction from Plant 3D piping models with integrated sanitization, quality checks, and standardized formatting. 70% faster than traditional methods.",
+          "applicationCategory": "Engineering Software",
+          "applicationSubCategory": "CAD Automation",
+          "operatingSystem": "Windows",
+          "featureList": [
+            "2D Piping GA generation from Plant 3D",
+            "Instrument location drawing extraction",
+            "Piping support locator with X-Y coordinates",
+            "Cable tray support locator",
+            "Auto-tagging and annotation",
+            "Built-in quality checks"
+          ],
+          "creator": {
+            "@type": "Organization",
+            "name": "Inventive Business Solutions Pvt Ltd"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shraddha-inventive.github.io/inventive_website/"},
+        {"@type": "ListItem", "position": 2, "name": "Demos", "item": "https://shraddha-inventive.github.io/inventive_website/demo.html"}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -77,7 +163,7 @@
                     </a>
                 </div>
                 <div class="header-top-right">
-                    <a href="https://www.linkedin.com/company/inventive-business-solutions-pvt-ltd/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/inventive-business-solutions-pvt-ltd/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
@@ -128,11 +214,19 @@
         </div>
     </header>
 
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Demos</li>
+        </ol>
+    </nav>
+
     <!-- Solutions Hero Section -->
     <section class="about-hero">
         <div class="about-hero-bg" style="background-image: url('images/AI_solutions.jpg')"></div>
         <div class="about-hero-overlay">
-            <h1>Solutions</h1>
+            <h1>Product Demos — AI Engineering Automation</h1>
         </div>
         <div class="about-hero-wave">
             <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
@@ -193,7 +287,7 @@
             <!-- Infographic Header -->
             <div class="infog-header">
                 <div class="infog-header-badge"><i class="fas fa-microchip"></i> AI&#8209;Powered Engineering Platform</div>
-                <h1 class="infog-title">The Evolution of EIT Support Fabrication</h1>
+                <h2 class="infog-title">The Evolution of EIT Support Fabrication</h2>
                 <p class="infog-subtitle">From Legacy Manual Drafting to AI&#8209;Driven Generation</p>
             </div>
 
@@ -353,11 +447,11 @@
             <!-- Video Section -->
             <div class="vid-gate-wrap" style="max-width:900px;margin:0 auto 40px;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.12)">
                 <div class="vid-gate" data-for="video-eit">
-                    <div class="vid-gate-icon"><i class="fas fa-envelope"></i></div>
-                    <h4>Enter your email to continue watching</h4>
-                    <p>Click here to provide your email</p>
+                    <div class="vid-gate-icon"><i class="fas fa-building"></i></div>
+                    <h4>Enter your business email to continue watching</h4>
+                    <p>Click here to provide your business email</p>
                 </div>
-                <video id="video-eit" controls playsinline style="width:100%;display:block">
+                <video id="video-eit" controls playsinline controlsList="nodownload" oncontextmenu="return false;" style="width:100%;display:block">
                     <source src="videos/Samanvay-AI.mp4" type="video/mp4">
                 </video>
             </div>
@@ -502,7 +596,7 @@
             <!-- Infographic Header -->
             <div class="infog-header">
                 <div class="infog-header-badge"><i class="fas fa-drafting-compass"></i> Plant 3D GA Automation Tool</div>
-                <h1 class="infog-title">AI Powered 2D Piping GA from Plant 3D</h1>
+                <h2 class="infog-title">AI Powered 2D Piping GA from Plant 3D</h2>
                 <p class="infog-subtitle">Automated 2D GA Extraction &mdash; From Model to Production&#8209;Ready Drawings in Minutes</p>
             </div>
 
@@ -662,12 +756,12 @@
             <!-- Video Section -->
             <div class="vid-gate-wrap" style="max-width:900px;margin:0 auto 40px;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.12)">
                 <div class="vid-gate" data-for="video-piping">
-                    <div class="vid-gate-icon"><i class="fas fa-envelope"></i></div>
-                    <h4>Enter your email to continue watching</h4>
-                    <p>Click here to provide your email</p>
+                    <div class="vid-gate-icon"><i class="fas fa-building"></i></div>
+                    <h4>Enter your business email to continue watching</h4>
+                    <p>Click here to provide your business email</p>
                 </div>
-                <video id="video-piping" controls playsinline style="width:100%;display:block">
-                    <source src="videos/Samanvay-AI.mp4" type="video/mp4">
+                <video id="video-piping" controls playsinline controlsList="nodownload" oncontextmenu="return false;" style="width:100%;display:block">
+                    <source src="videos/Plant-3D-GA-Auto-AD.mp4" type="video/mp4">
                 </video>
             </div>
 
@@ -850,7 +944,7 @@
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Get in Touch</h4>
-                    <p class="footer-email">inquiry@inventivebizsol.com</p>
+                    <a href="contact.html" class="footer-email">inquiry@inventivebizsol.com</a>
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/company/inventive-business-solutions-pvt-ltd" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.youtube.com/@Inventivebizsol" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
@@ -879,11 +973,12 @@
             <button class="vid-email-close" id="vidEmailClose"><i class="fas fa-times"></i></button>
             <div class="vid-icon"><i class="fas fa-play-circle"></i></div>
             <h3>Continue Watching</h3>
-            <p>Enter your email to unlock the full video demo</p>
+            <p>Enter your business email to unlock the full video demo</p>
             <form class="vid-email-form" id="vidEmailForm">
-                <input type="email" class="vid-email-input" id="vidEmailInput" placeholder="your@email.com" required>
+                <input type="email" class="vid-email-input" id="vidEmailInput" placeholder="name@company.com" required>
                 <button type="submit" class="vid-email-submit"><i class="fas fa-arrow-right"></i> Submit</button>
             </form>
+            <p class="vid-email-error-msg" id="vidEmailError" style="display:none;color:#EF4444;font-size:12px;margin-top:8px;text-align:left;"></p>
         </div>
     </div>
 
@@ -911,11 +1006,36 @@
             return vid?document.querySelector('.vid-gate[data-for="'+vid.id+'"]'):null;
         }
 
+        function exitFullscreen(){
+            if(document.fullscreenElement) return document.exitFullscreen();
+            if(document.webkitFullscreenElement) return document.webkitExitFullscreen();
+            if(document.msFullscreenElement) return document.msExitFullscreen();
+            return Promise.resolve();
+        }
+
         function showEmailPopup(vid){
             activeVideo=vid;
-            overlay.classList.add('active');
-            document.body.style.overflow='hidden';
-            setTimeout(function(){input.focus()},350);
+            var fs=document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement;
+            if(fs){
+                var p=exitFullscreen();
+                if(p&&p.then){
+                    p.then(function(){
+                        overlay.classList.add('active');
+                        document.body.style.overflow='hidden';
+                        setTimeout(function(){input.focus()},350);
+                    });
+                } else {
+                    setTimeout(function(){
+                        overlay.classList.add('active');
+                        document.body.style.overflow='hidden';
+                        setTimeout(function(){input.focus()},350);
+                    },300);
+                }
+            } else {
+                overlay.classList.add('active');
+                document.body.style.overflow='hidden';
+                setTimeout(function(){input.focus()},350);
+            }
         }
 
         function setupVideo(vid){
@@ -960,20 +1080,36 @@
             activeVideo=null;
         }
 
+        var errorMsg=document.getElementById('vidEmailError');
+        var personalDomains=new Set(['gmail.com','yahoo.com','yahoo.in','yahoo.co.in','hotmail.com','outlook.com','live.com','aol.com','icloud.com','me.com','mac.com','mail.com','protonmail.com','proton.me','zoho.com','yandex.com','gmx.com','gmx.net','rediffmail.com','fastmail.com','tutanota.com','inbox.com','msn.com','att.net','comcast.net','verizon.net','sbcglobal.net','cox.net','charter.net']);
+
         form.addEventListener('submit',function(e){
             e.preventDefault();
             var email=input.value.trim();
+            errorMsg.style.display='none';
             if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
                 input.classList.add('error');
+                errorMsg.textContent='Please enter a valid email address.';
+                errorMsg.style.display='block';
+                input.focus();
+                return;
+            }
+            var domain=email.split('@')[1].toLowerCase();
+            if(personalDomains.has(domain)){
+                input.classList.add('error');
+                errorMsg.textContent='Please use your business email (e.g. name@company.com). Personal emails are not accepted.';
+                errorMsg.style.display='block';
                 input.focus();
                 return;
             }
             input.classList.remove('error');
+            errorMsg.style.display='none';
             closeAndResume();
         });
 
         input.addEventListener('input',function(){
             input.classList.remove('error');
+            errorMsg.style.display='none';
         });
 
         document.getElementById('vidEmailClose').addEventListener('click',dismissPopup);

@@ -152,19 +152,19 @@
                         <li>Structural Engineering</li>
                     </ul>
                     <div class="video-buttons">
-                        <div class="video-btn-item">
+                        <div class="video-btn-item" data-video="https://player.vimeo.com/video/1013153330?badge=0&autopause=0&player_id=0&app_id=58479">
                             <div class="video-btn-icon">
                                 <i class="fas fa-play"></i>
                             </div>
                             <span>Cable Tray</span>
                         </div>
-                        <div class="video-btn-item">
+                        <div class="video-btn-item" data-video="https://player.vimeo.com/video/1013154120?badge=0&autopause=0&player_id=0&app_id=58479">
                             <div class="video-btn-icon">
                                 <i class="fas fa-play"></i>
                             </div>
                             <span>Lighting Layout</span>
                         </div>
-                        <div class="video-btn-item">
+                        <div class="video-btn-item" data-video="https://player.vimeo.com/video/1013154545?badge=0&autopause=0&player_id=0&app_id=58479">
                             <div class="video-btn-icon">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -588,6 +588,14 @@
     <button class="scroll-to-top" id="scrollToTop">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- CAD Automation Video Modal -->
+    <div class="service-modal-overlay" id="cadVideoModal" style="z-index:10000;backdrop-filter:blur(6px);">
+        <div style="position:relative;width:90%;max-width:900px;margin:auto;">
+            <button class="service-modal-close" id="closeCadVideoModal" style="position:absolute;top:-40px;right:0;background:rgba(255,255,255,0.2);color:#fff;border:none;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;">&times;</button>
+            <iframe id="cadVideoIframe" title="CAD Automation Video" src="" style="width:100%;aspect-ratio:16/9;border:none;border-radius:12px;display:block;box-shadow:0 20px 60px rgba(0,0,0,0.4);" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

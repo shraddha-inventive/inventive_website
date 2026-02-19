@@ -395,6 +395,37 @@ if (openVideoBtn && videoModal) {
     });
 }
 
+// ===== CAD Automation Video Buttons =====
+const cadVideoModal = document.getElementById('cadVideoModal');
+const cadVideoIframe = document.getElementById('cadVideoIframe');
+const closeCadVideoBtn = document.getElementById('closeCadVideoModal');
+const videoBtnItems = document.querySelectorAll('.video-btn-item[data-video]');
+
+if (videoBtnItems.length > 0 && cadVideoModal) {
+    videoBtnItems.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const videoSrc = btn.getAttribute('data-video');
+            cadVideoIframe.src = videoSrc;
+            cadVideoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeCadVideoBtn.addEventListener('click', () => {
+        cadVideoModal.classList.remove('active');
+        cadVideoIframe.src = '';
+        document.body.style.overflow = '';
+    });
+
+    cadVideoModal.addEventListener('click', (e) => {
+        if (e.target === cadVideoModal) {
+            cadVideoModal.classList.remove('active');
+            cadVideoIframe.src = '';
+            document.body.style.overflow = '';
+        }
+    });
+}
+
 // ===== Service Read More Modals =====
 const readMoreBtns = document.querySelectorAll('.btn-read-more[data-modal]');
 readMoreBtns.forEach(btn => {
@@ -441,6 +472,12 @@ document.addEventListener('keydown', (e) => {
         document.querySelectorAll('.service-modal-overlay.active').forEach(overlay => {
             closeModal(overlay);
         });
+        // Close CAD video modal on Escape
+        if (cadVideoModal && cadVideoModal.classList.contains('active')) {
+            cadVideoModal.classList.remove('active');
+            cadVideoIframe.src = '';
+            document.body.style.overflow = '';
+        }
     }
 });
 

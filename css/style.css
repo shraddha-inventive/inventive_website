@@ -1448,14 +1448,14 @@ img {
 /* ===== Footer ===== */
 .footer {
     background-color: var(--footer-bg);
-    padding: 60px 0 0;
+    padding: 35px 0 0;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
-    gap: 40px;
-    padding-bottom: 40px;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 25px;
+    padding-bottom: 20px;
 }
 
 .footer-about {
@@ -1477,9 +1477,9 @@ img {
 .footer-heading {
     color: var(--footer-heading);
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .footer-services-list li,
@@ -1537,7 +1537,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0;
+    padding: 15px 0;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -2943,7 +2943,8 @@ img {
 
 .service-detail-buttons {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
@@ -2951,12 +2952,13 @@ img {
     display: inline-block;
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 14px 35px;
+    padding: 11px 24px;
     border-radius: 25px;
     font-family: var(--font-primary);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .btn-enquire:hover {
@@ -2967,18 +2969,19 @@ img {
 .btn-read-more {
     display: inline-block;
     background-color: transparent;
-    color: #333;
-    padding: 14px 35px;
+    color: var(--primary-color);
+    padding: 11px 24px;
     border-radius: 25px;
-    border: 2px solid #333;
+    border: 2px solid var(--primary-color);
     font-family: var(--font-primary);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .btn-read-more:hover {
-    background-color: #333;
+    background-color: var(--primary-color);
     color: var(--white);
 }
 
@@ -3048,6 +3051,93 @@ img {
     color: var(--text-heading);
 }
 
+/* ===== Watch Video Button (Solutions Page) ===== */
+.btn-watch-video {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 24px;
+    background-color: var(--primary-dark);
+    color: #fff;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-watch-video:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.btn-watch-video i {
+    font-size: 1rem;
+}
+
+/* ===== Solution Video Modal ===== */
+.solution-video-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.solution-video-modal-overlay.active {
+    display: flex;
+}
+
+.solution-video-modal {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    border-radius: 14px;
+    overflow: visible;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    animation: vidPopIn 0.35s ease;
+}
+
+.solution-video-modal .vid-gate-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.solution-video-modal-close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.solution-video-modal-close:hover {
+    background: rgba(239, 68, 68, 0.85);
+    transform: scale(1.1);
+}
+
+@keyframes vidPopIn {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 /* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
     .hero-slider {
@@ -3068,8 +3158,8 @@ img {
     }
 
     .footer-grid {
-        grid-template-columns: 1.5fr 1fr 1fr 1fr;
-        gap: 30px;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+        gap: 20px;
     }
 
     .contact-hero {
@@ -3392,12 +3482,12 @@ img {
     }
 
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
     }
 
     .footer-about {
-        grid-column: span 2;
+        grid-column: span 3;
     }
 
     .footer-bottom {
@@ -3706,12 +3796,12 @@ img {
     }
 
     .footer {
-        padding: 40px 0 0;
+        padding: 30px 0 0;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
     }
 
     .footer-about {
@@ -3866,7 +3956,8 @@ img {
     }
 
     .btn-enquire,
-    .btn-read-more {
+    .btn-read-more,
+    .btn-watch-video {
         padding: 12px 25px;
         font-size: 0.85rem;
         text-align: center;

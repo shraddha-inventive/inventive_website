@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventive Bizsol – Theme Preview</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Current fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Option 1: Inter + DM Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Option 2: Raleway + Source Sans 3 -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Option 3: Space Grotesk + Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Option 4: Sora + Work Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Option 5: Outfit + Nunito Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Option 6: Lexend + Manrope -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS Variables - Default (Current Sky Blue) ===== */
+        :root {
+            --primary: #0EA5E9;
+            --primary-dark: #0284C7;
+            --primary-light: #38BDF8;
+            --accent: #0EA5E9;
+            --bg-main: #FFFFFF;
+            --bg-alt: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --text-body: #334155;
+            --text-light: #64748B;
+            --text-heading: #1E293B;
+            --footer-bg: #1E293B;
+            --footer-text: #94A3B8;
+            --hero-from: #0F172A;
+            --hero-to: #1E293B;
+            --header-from: rgba(0, 30, 60, 0.6);
+            --header-to: rgba(0, 30, 60, 0.3);
+            --border: #E2E8F0;
+            --icon-bg: rgba(14,165,233,0.1);
+            --stat-highlight: #0EA5E9;
+
+            /* Font Variables */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-nav: 'Poppins', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        /* ===== Reset ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            color: var(--text-body);
+            background: var(--bg-main);
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== Theme Switcher Bar (Fixed) ===== */
+        .theme-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: rgba(15, 15, 25, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            flex-wrap: wrap;
+        }
+        .theme-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .theme-bar-label {
+            color: #fff;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .theme-bar-label i {
+            margin-right: 6px;
+            color: var(--primary);
+        }
+        .theme-select {
+            padding: 10px 40px 10px 16px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            font-size: 0.9rem;
+            font-family: var(--font-nav);
+            font-weight: 500;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6.5 6.5 6.5-6.5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            transition: all 0.3s ease;
+            min-width: 280px;
+        }
+        .theme-select:hover {
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.12);
+        }
+        .theme-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14,165,233,0.2);
+        }
+        .theme-select option {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 8px;
+        }
+
+        /* Swatch preview in bar */
+        .theme-bar-swatches {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .mini-swatch {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .mini-swatch-label {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-right: 4px;
+        }
+
+        /* Body offset for fixed bar */
+        body { padding-top: 65px; }
+
+        /* ===== Transition on all themed elements ===== */
+        .site-header, .header-top-bar, .email-btn, .social-icon,
+        .hero-section, .mock-hero-overlay, .btn-primary, .btn-secondary,
+        .services-section, .service-card, .service-icon-wrap,
+        .stats-section, .stat-number, .process-section, .process-icon-wrap,
+        .about-section, .footer, .footer-social a,
+        .section-divider, .divider-line,
+        .scroll-to-top, .services-tab {
+            transition: all 0.5s ease;
+        }
+
+        /* ===== Header ===== */
+        .site-header {
+            background: linear-gradient(180deg, var(--header-from) 0%, var(--header-to) 60%, transparent 100%);
+            backdrop-filter: blur(8px);
+            padding: 0;
+        }
+        .header-top-bar {
+            padding: 8px 0;
+        }
+        .header-top-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 15px;
+        }
+        .header-top-left { flex: 1; }
+        .email-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .email-btn:hover { background: var(--primary-dark); }
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 4px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 1rem;
+        }
+        .social-icon:hover { background: var(--primary-dark); }
+
+        .header-main {
+            padding: 12px 0;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+        .header-main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img { height: 70px; width: auto; }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .nav-link {
+            font-family: var(--font-nav);
+            font-weight: 500;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.85);
+        }
+        .nav-link:hover, .nav-link.active { color: #fff; }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            position: relative;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%);
+            z-index: 0;
+        }
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.06;
+            background-image:
+                radial-gradient(circle at 20% 50%, var(--primary) 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, var(--primary-light) 1px, transparent 1px),
+                radial-gradient(circle at 60% 80%, var(--accent) 0.5px, transparent 0.5px);
+            background-size: 60px 60px, 80px 80px, 40px 40px;
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            color: #fff;
+        }
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 600px;
+            margin-bottom: 16px;
+        }
+        .hero-content p {
+            max-width: 500px;
+            opacity: 0.85;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-family: var(--font-nav);
+            margin-right: 12px;
+        }
+        .btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); }
+        .btn-secondary {
+            display: inline-block;
+            padding: 14px 32px;
+            border: 2px solid rgba(255,255,255,0.4);
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-family: var(--font-nav);
+        }
+        .btn-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+        /* ===== Section Divider ===== */
+        .section-divider {
+            padding: 0;
+            text-align: center;
+            background: var(--bg-main);
+        }
+        .divider-line {
+            height: 3px;
+            max-width: 120px;
+            margin: 0 auto;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        /* ===== Services Section ===== */
+        .services-section {
+            background: var(--bg-alt);
+            padding: 60px 0 50px;
+        }
+        .services-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 30px;
+        }
+        .services-tab {
+            padding: 12px 32px;
+            font-family: var(--font-nav);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            background: transparent;
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+        .services-tab.active {
+            background: var(--bg-card);
+            color: var(--primary);
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+        }
+        .services-tab:hover:not(.active) { color: var(--text-heading); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        .service-icon-wrap {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.5rem;
+            background: var(--icon-bg);
+            color: var(--primary);
+        }
+        .service-card h3 {
+            font-family: var(--font-nav);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            margin-bottom: 6px;
+        }
+        .service-card p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* ===== Process / How We Work ===== */
+        .process-section {
+            background: var(--bg-main);
+            padding: 60px 0;
+        }
+        .section-heading {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 8px;
+        }
+        .section-subheading {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+        .process-timeline {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .process-step {
+            text-align: center;
+            flex: 0 0 180px;
+        }
+        .process-icon-wrap {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 1.5rem;
+            background: var(--primary);
+            color: #fff;
+        }
+        .process-step h3 {
+            font-family: var(--font-nav);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            margin-bottom: 6px;
+        }
+        .process-step p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        .process-connector {
+            display: flex;
+            align-items: center;
+            padding-top: 22px;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        /* ===== Stats Section ===== */
+        .stats-section {
+            background: var(--bg-alt);
+            padding: 50px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .stat-item { padding: 20px; }
+        .stat-icon {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--stat-highlight);
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== About Section ===== */
+        .about-section {
+            background: var(--bg-main);
+            padding: 60px 0;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text { flex: 1; }
+        .about-text h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .about-text p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .watch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-nav);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        .play-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        .about-image {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        .about-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* ===== Client Logos ===== */
+        .clients-section {
+            background: var(--bg-main);
+            padding: 30px 0;
+            overflow: hidden;
+        }
+        .clients-track {
+            overflow: hidden;
+        }
+        .clients-slide {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            animation: scroll-logos 25s linear infinite;
+        }
+        .clients-slide img {
+            height: 45px;
+            width: auto;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+        .clients-slide img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+        @keyframes scroll-logos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--footer-bg);
+            padding: 50px 0 0;
+            color: var(--footer-text);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-logo { height: 50px; margin-bottom: 14px; }
+        .footer-tagline {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            opacity: 0.75;
+        }
+        .footer-heading {
+            font-family: var(--font-nav);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a {
+            font-size: 0.85rem;
+            color: var(--footer-text);
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: #fff; }
+        .footer-email {
+            display: block;
+            color: var(--primary-light);
+            font-size: 0.85rem;
+            margin-bottom: 14px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        .footer-social a:hover { background: var(--primary); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 18px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* ===== Scroll to Top ===== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+        }
+        .scroll-to-top:hover { background: var(--primary-dark); }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-content { flex-direction: column; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero-content h1 { font-size: 1.8rem; }
+            .hero-content { padding: 60px 20px; }
+            .process-timeline { flex-direction: column; align-items: center; }
+            .process-connector { transform: rotate(90deg); padding: 0; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .theme-bar { flex-direction: column; align-items: flex-start; gap: 8px; padding: 10px 16px; }
+            .theme-select { min-width: 100%; }
+            body { padding-top: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== THEME SWITCHER BAR ===== -->
+    <div class="theme-bar">
+        <div class="theme-bar-left">
+            <span class="theme-bar-label"><i class="fas fa-palette"></i> Color</span>
+            <select class="theme-select" id="themeSelect">
+                <option value="current">Current — Sky Blue & Slate</option>
+                <option value="navy-gold">Option 1 — Deep Navy & Amber Gold (Recommended)</option>
+                <option value="teal-orange">Option 2 — Teal & Warm Orange</option>
+                <option value="indigo-emerald">Option 3 — Indigo & Emerald</option>
+            </select>
+        </div>
+        <div class="theme-bar-left">
+            <span class="theme-bar-label"><i class="fas fa-font"></i> Font</span>
+            <select class="theme-select" id="fontSelect">
+                <optgroup label="── Best Headings with Poppins ──">
+                    <option value="sora-poppins">★ Sora + Poppins (Best Pick)</option>
+                    <option value="spaceg-poppins">★ Space Grotesk + Poppins (Technical)</option>
+                    <option value="lexend-poppins">★ Lexend + Poppins (Bold & Wide)</option>
+                    <option value="raleway-poppins">★ Raleway + Poppins (Elegant)</option>
+                    <option value="dmsans-poppins">★ DM Sans + Poppins (Clean Modern)</option>
+                </optgroup>
+                <optgroup label="── Current ──">
+                    <option value="current">Montserrat + Poppins + Open Sans</option>
+                </optgroup>
+                <optgroup label="── Full Combinations ──">
+                    <option value="inter-dm">Inter + DM Sans (Modern Tech)</option>
+                    <option value="raleway-source">Raleway + Source Sans 3 (Elegant Pro)</option>
+                    <option value="space-jakarta">Space Grotesk + Plus Jakarta Sans (Bold Tech)</option>
+                    <option value="sora-work">Sora + Work Sans (Futuristic Clean)</option>
+                    <option value="outfit-nunito">Outfit + Nunito Sans (Friendly Modern)</option>
+                    <option value="lexend-manrope">Lexend + Manrope (Crisp Geometric)</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="theme-bar-swatches">
+            <span class="mini-swatch-label">PALETTE:</span>
+            <div class="mini-swatch" id="sw1" style="background:var(--primary);"></div>
+            <div class="mini-swatch" id="sw2" style="background:var(--primary-dark);"></div>
+            <div class="mini-swatch" id="sw3" style="background:var(--primary-light);"></div>
+            <div class="mini-swatch" id="sw4" style="background:var(--accent);"></div>
+            <div class="mini-swatch" id="sw5" style="background:var(--bg-alt);border-color:rgba(255,255,255,0.08);"></div>
+            <div class="mini-swatch" id="sw6" style="background:var(--footer-bg);"></div>
+        </div>
+    </div>
+
+    <!-- Font preview info panel -->
+    <div id="fontInfoPanel" style="
+        max-width: 1200px;
+        margin: 20px auto 0;
+        padding: 16px 24px;
+        background: var(--bg-alt);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        transition: all 0.4s ease;
+    ">
+        <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);font-weight:600;">Headings:</span>
+            <span id="fontInfoHeading" style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;color:var(--text-heading);">Montserrat</span>
+        </div>
+        <div style="width:1px;height:24px;background:var(--border);"></div>
+        <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);font-weight:600;">Navigation / UI:</span>
+            <span id="fontInfoNav" style="font-family:var(--font-nav);font-weight:600;font-size:1rem;color:var(--text-heading);">Poppins</span>
+        </div>
+        <div style="width:1px;height:24px;background:var(--border);"></div>
+        <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);font-weight:600;">Body Text:</span>
+            <span id="fontInfoBody" style="font-family:var(--font-body);font-weight:400;font-size:1rem;color:var(--text-heading);">Open Sans</span>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="header-top-bar">
+            <div class="header-top-container">
+                <div class="header-top-left"></div>
+                <div>
+                    <a href="#" class="email-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>inquiry@inventivebizsol.com</span>
+                    </a>
+                </div>
+                <div style="margin-left:12px;">
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="header-main-container">
+                <div class="logo-wrapper">
+                    <a href="#" class="logo">
+                        <img src="images/logo-01.png" alt="Inventive Bizsol">
+                    </a>
+                </div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#" class="nav-link active">Home</a></li>
+                        <li><a href="#" class="nav-link">About Us</a></li>
+                        <li><a href="#" class="nav-link">Services</a></li>
+                        <li><a href="#" class="nav-link">Solutions</a></li>
+                        <li><a href="#" class="nav-link">Demo</a></li>
+                        <li><a href="#" class="nav-link">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <h1>AI-Powered Intelligence for Every Engineering Decision</h1>
+            <p>Continuously drive progress by embracing modern technologies and creative solutions to enhance engineering design and automation.</p>
+            <a href="#" class="btn-primary">Explore Now</a>
+            <a href="#" class="btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- ===== DIVIDER ===== -->
+    <div class="section-divider">
+        <div class="divider-line" style="margin-top:0;"></div>
+    </div>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="services-tabs">
+                <button class="services-tab active">SERVICES</button>
+                <button class="services-tab">SOLUTIONS</button>
+            </div>
+            <div class="services-grid">
+                <a href="#" class="service-card">
+                    <div class="service-icon-wrap"><i class="fas fa-cubes"></i></div>
+                    <h3>BIM Services</h3>
+                    <p>Building Information Modeling solutions</p>
+                </a>
+                <a href="#" class="service-card">
+                    <div class="service-icon-wrap"><i class="fas fa-bolt"></i></div>
+                    <h3>Speed BIM</h3>
+                    <p>Accelerated BIM delivery platform</p>
+                </a>
+                <a href="#" class="service-card">
+                    <div class="service-icon-wrap"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Engineering Services</h3>
+                    <p>End-to-end engineering design</p>
+                </a>
+                <a href="#" class="service-card">
+                    <div class="service-icon-wrap"><i class="fas fa-cogs"></i></div>
+                    <h3>CAD Automation</h3>
+                    <p>Intelligent automation workflows</p>
+                </a>
+                <a href="#" class="service-card">
+                    <div class="service-icon-wrap"><i class="fas fa-microchip"></i></div>
+                    <h3>Digitalization</h3>
+                    <p>Digital transformation services</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLIENT LOGOS ===== -->
+    <section class="clients-section">
+        <div class="clients-track">
+            <div class="clients-slide">
+                <img src="images/1.png" alt="Bharat Petroleum">
+                <img src="images/3.png" alt="Praj">
+                <img src="images/4.png" alt="MNGL">
+                <img src="images/5.png" alt="Aquatech">
+                <img src="images/6.png" alt="Thermax">
+                <img src="images/7.png" alt="Europem">
+                <img src="images/9.png" alt="Tetra Pak">
+                <img src="images/10-1.png" alt="GAIL">
+                <img src="images/14.png" alt="NALCO">
+                <img src="images/15.png" alt="OsmoFlo">
+                <img src="images/2.png" alt="SMS Group">
+                <img src="images/13.png" alt="thyssenkrupp">
+                <img src="images/1.png" alt="Bharat Petroleum">
+                <img src="images/3.png" alt="Praj">
+                <img src="images/4.png" alt="MNGL">
+                <img src="images/5.png" alt="Aquatech">
+                <img src="images/6.png" alt="Thermax">
+                <img src="images/7.png" alt="Europem">
+                <img src="images/9.png" alt="Tetra Pak">
+                <img src="images/10-1.png" alt="GAIL">
+                <img src="images/14.png" alt="NALCO">
+                <img src="images/15.png" alt="OsmoFlo">
+                <img src="images/2.png" alt="SMS Group">
+                <img src="images/13.png" alt="thyssenkrupp">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW WE WORK ===== -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-heading">How We Work</h2>
+            <p class="section-subheading">Our streamlined approach delivers results from concept to completion</p>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-icon-wrap"><i class="fas fa-comments"></i></div>
+                    <h3>Consult</h3>
+                    <p>We understand your challenges and project requirements</p>
+                </div>
+                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
+                <div class="process-step">
+                    <div class="process-icon-wrap"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3>Design</h3>
+                    <p>Tailored solutions using cutting-edge technologies</p>
+                </div>
+                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
+                <div class="process-step">
+                    <div class="process-icon-wrap"><i class="fas fa-cogs"></i></div>
+                    <h3>Automate</h3>
+                    <p>AI and automation to accelerate delivery</p>
+                </div>
+                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
+                <div class="process-step">
+                    <div class="process-icon-wrap"><i class="fas fa-check-circle"></i></div>
+                    <h3>Deliver</h3>
+                    <p>Production-ready with built-in quality assurance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-number">2011</div>
+                    <div class="stat-label">Founded</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-award"></i></div>
+                    <div class="stat-number">14+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="stat-number">Autodesk</div>
+                    <div class="stat-label">Development Partner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT US ===== -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About<br>Us</h2>
+                    <p>Inventive Business Solutions is a dynamic engineering and technology company specializing in BIM Services, CAD Automation, Engineering Design, and Digital Transformation. As an Autodesk Authorized Development Partner, we deliver innovative solutions for global industries.</p>
+                    <a href="#" class="watch-btn">
+                        <span class="play-icon"><i class="fas fa-play"></i></span>
+                        <span>WATCH NOW</span>
+                    </a>
+                </div>
+                <div class="about-image">
+                    <img src="images/Service-Page-Header-Mobile-View_new.png" alt="About Inventive">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo-01.png" alt="Inventive Bizsol" class="footer-logo">
+                    <p class="footer-tagline">Continuously drive progress by embracing modern technologies and creative solutions to enhance engineering design and automation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">BIM Services</a></li>
+                        <li><a href="#">Speed BIM</a></li>
+                        <li><a href="#">Engineering Services</a></li>
+                        <li><a href="#">CAD Automation</a></li>
+                        <li><a href="#">Digitalization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">EIT Support Extraction Platform</a></li>
+                        <li><a href="#">AI Powered 2D Piping GA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <a href="#" class="footer-email">inquiry@inventivebizsol.com</a>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; Copyright Inventive 2026. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ===== THEME SWITCHING SCRIPT ===== -->
+    <script>
+        const themes = {
+            'current': {
+                '--primary': '#0EA5E9',
+                '--primary-dark': '#0284C7',
+                '--primary-light': '#38BDF8',
+                '--accent': '#0EA5E9',
+                '--bg-main': '#FFFFFF',
+                '--bg-alt': '#F1F5F9',
+                '--bg-card': '#FFFFFF',
+                '--text-body': '#334155',
+                '--text-light': '#64748B',
+                '--text-heading': '#1E293B',
+                '--footer-bg': '#1E293B',
+                '--footer-text': '#94A3B8',
+                '--hero-from': '#0F172A',
+                '--hero-to': '#1E293B',
+                '--header-from': 'rgba(0, 30, 60, 0.6)',
+                '--header-to': 'rgba(0, 30, 60, 0.3)',
+                '--border': '#E2E8F0',
+                '--icon-bg': 'rgba(14,165,233,0.1)',
+                '--stat-highlight': '#0EA5E9'
+            },
+            'navy-gold': {
+                '--primary': '#1B365D',
+                '--primary-dark': '#0F2440',
+                '--primary-light': '#2A5298',
+                '--accent': '#D4A843',
+                '--bg-main': '#FFFFFF',
+                '--bg-alt': '#F8F7F4',
+                '--bg-card': '#FFFFFF',
+                '--text-body': '#2D3748',
+                '--text-light': '#6B7280',
+                '--text-heading': '#1B365D',
+                '--footer-bg': '#0F1A2E',
+                '--footer-text': '#8899AA',
+                '--hero-from': '#0F1A2E',
+                '--hero-to': '#1B365D',
+                '--header-from': 'rgba(15, 26, 46, 0.7)',
+                '--header-to': 'rgba(15, 26, 46, 0.35)',
+                '--border': '#E5E2DB',
+                '--icon-bg': 'rgba(27,54,93,0.1)',
+                '--stat-highlight': '#D4A843'
+            },
+            'teal-orange': {
+                '--primary': '#0D9488',
+                '--primary-dark': '#0F766E',
+                '--primary-light': '#2DD4BF',
+                '--accent': '#F97316',
+                '--bg-main': '#FFFFFF',
+                '--bg-alt': '#F0FDFA',
+                '--bg-card': '#FFFFFF',
+                '--text-body': '#1E293B',
+                '--text-light': '#64748B',
+                '--text-heading': '#134E4A',
+                '--footer-bg': '#134E4A',
+                '--footer-text': '#7DAEA8',
+                '--hero-from': '#134E4A',
+                '--hero-to': '#0F766E',
+                '--header-from': 'rgba(19, 78, 74, 0.7)',
+                '--header-to': 'rgba(19, 78, 74, 0.35)',
+                '--border': '#D1FAE5',
+                '--icon-bg': 'rgba(13,148,136,0.1)',
+                '--stat-highlight': '#0D9488'
+            },
+            'indigo-emerald': {
+                '--primary': '#4F46E5',
+                '--primary-dark': '#3730A3',
+                '--primary-light': '#818CF8',
+                '--accent': '#10B981',
+                '--bg-main': '#FFFFFF',
+                '--bg-alt': '#F5F3FF',
+                '--bg-card': '#FFFFFF',
+                '--text-body': '#374151',
+                '--text-light': '#6B7280',
+                '--text-heading': '#1E1B4B',
+                '--footer-bg': '#1E1B4B',
+                '--footer-text': '#9995C8',
+                '--hero-from': '#1E1B4B',
+                '--hero-to': '#3730A3',
+                '--header-from': 'rgba(30, 27, 75, 0.7)',
+                '--header-to': 'rgba(30, 27, 75, 0.35)',
+                '--border': '#E0E7FF',
+                '--icon-bg': 'rgba(79,70,229,0.1)',
+                '--stat-highlight': '#4F46E5'
+            }
+        };
+
+        const select = document.getElementById('themeSelect');
+        const root = document.documentElement;
+
+        // Swatch elements
+        const sw1 = document.getElementById('sw1');
+        const sw2 = document.getElementById('sw2');
+        const sw3 = document.getElementById('sw3');
+        const sw4 = document.getElementById('sw4');
+        const sw5 = document.getElementById('sw5');
+        const sw6 = document.getElementById('sw6');
+
+        function applyTheme(themeName) {
+            const theme = themes[themeName];
+            if (!theme) return;
+
+            Object.keys(theme).forEach(key => {
+                root.style.setProperty(key, theme[key]);
+            });
+
+            // Update mini swatches
+            sw1.style.background = theme['--primary'];
+            sw2.style.background = theme['--primary-dark'];
+            sw3.style.background = theme['--primary-light'];
+            sw4.style.background = theme['--accent'];
+            sw5.style.background = theme['--bg-alt'];
+            sw6.style.background = theme['--footer-bg'];
+        }
+
+        select.addEventListener('change', function () {
+            applyTheme(this.value);
+        });
+
+        // ===== FONT SWITCHING =====
+        const fonts = {
+            // ── Best Headings with Poppins ──
+            'sora-poppins': {
+                heading: "'Sora', sans-serif",
+                nav: "'Poppins', sans-serif",
+                body: "'Poppins', sans-serif",
+                headingName: 'Sora',
+                navName: 'Poppins',
+                bodyName: 'Poppins',
+                desc: '#1 Pick — Sora angular edges contrast Poppins roundness, creating strong visual hierarchy.'
+            },
+            'spaceg-poppins': {
+                heading: "'Space Grotesk', sans-serif",
+                nav: "'Poppins', sans-serif",
+                body: "'Poppins', sans-serif",
+                headingName: 'Space Grotesk',
+                navName: 'Poppins',
+                bodyName: 'Poppins',
+                desc: 'Technical — Space Grotesk monospace-inspired character gives an engineering/code feel to headings.'
+            },
+            'lexend-poppins': {
+                heading: "'Lexend', sans-serif",
+                nav: "'Poppins', sans-serif",
+                body: "'Poppins', sans-serif",
+                headingName: 'Lexend',
+                navName: 'Poppins',
+                bodyName: 'Poppins',
+                desc: 'Bold & Wide — Lexend wider proportions make headings feel commanding and impactful.'
+            },
+            'raleway-poppins': {
+                heading: "'Raleway', sans-serif",
+                nav: "'Poppins', sans-serif",
+                body: "'Poppins', sans-serif",
+                headingName: 'Raleway',
+                navName: 'Poppins',
+                bodyName: 'Poppins',
+                desc: 'Elegant — Raleway thin strokes at lighter weights create a sophisticated, refined contrast.'
+            },
+            'dmsans-poppins': {
+                heading: "'DM Sans', sans-serif",
+                nav: "'Poppins', sans-serif",
+                body: "'Poppins', sans-serif",
+                headingName: 'DM Sans',
+                navName: 'Poppins',
+                bodyName: 'Poppins',
+                desc: 'Clean Modern — DM Sans is compact and crisp, a subtle but effective upgrade for headings.'
+            },
+            // ── Current ──
+            'current': {
+                heading: "'Montserrat', sans-serif",
+                nav: "'Poppins', sans-serif",
+                body: "'Open Sans', sans-serif",
+                headingName: 'Montserrat',
+                navName: 'Poppins',
+                bodyName: 'Open Sans',
+                desc: 'Your current font stack — geometric headings, clean navigation, highly readable body text.'
+            },
+            'inter-dm': {
+                heading: "'DM Sans', sans-serif",
+                nav: "'Inter', sans-serif",
+                body: "'Inter', sans-serif",
+                headingName: 'DM Sans',
+                navName: 'Inter',
+                bodyName: 'Inter',
+                desc: 'Modern tech favorite — Inter is the most popular UI font for SaaS and tech companies. DM Sans adds warmth to headings.'
+            },
+            'raleway-source': {
+                heading: "'Raleway', sans-serif",
+                nav: "'Source Sans 3', sans-serif",
+                body: "'Source Sans 3', sans-serif",
+                headingName: 'Raleway',
+                navName: 'Source Sans 3',
+                bodyName: 'Source Sans 3',
+                desc: 'Elegant professional — Raleway brings sophistication to headings, Source Sans 3 (by Adobe) offers excellent readability.'
+            },
+            'space-jakarta': {
+                heading: "'Space Grotesk', sans-serif",
+                nav: "'Plus Jakarta Sans', sans-serif",
+                body: "'Plus Jakarta Sans', sans-serif",
+                headingName: 'Space Grotesk',
+                navName: 'Plus Jakarta Sans',
+                bodyName: 'Plus Jakarta Sans',
+                desc: 'Bold & distinctive — Space Grotesk has a strong technical character. Plus Jakarta Sans is modern and exceptionally clean.'
+            },
+            'sora-work': {
+                heading: "'Sora', sans-serif",
+                nav: "'Work Sans', sans-serif",
+                body: "'Work Sans', sans-serif",
+                headingName: 'Sora',
+                navName: 'Work Sans',
+                bodyName: 'Work Sans',
+                desc: 'Futuristic clean — Sora has a space-age geometric feel for headings. Work Sans is optimized for screens with excellent clarity.'
+            },
+            'outfit-nunito': {
+                heading: "'Outfit', sans-serif",
+                nav: "'Nunito Sans', sans-serif",
+                body: "'Nunito Sans', sans-serif",
+                headingName: 'Outfit',
+                navName: 'Nunito Sans',
+                bodyName: 'Nunito Sans',
+                desc: 'Friendly modern — Outfit is a rising geometric sans with personality. Nunito Sans brings warmth and approachability to body text.'
+            },
+            'lexend-manrope': {
+                heading: "'Lexend', sans-serif",
+                nav: "'Manrope', sans-serif",
+                body: "'Manrope', sans-serif",
+                headingName: 'Lexend',
+                navName: 'Manrope',
+                bodyName: 'Manrope',
+                desc: 'Crisp geometric — Lexend was designed for maximum readability. Manrope is a modern sans with a distinctive, sharp character.'
+            }
+        };
+
+        const fontSelect = document.getElementById('fontSelect');
+        const fontInfoHeading = document.getElementById('fontInfoHeading');
+        const fontInfoNav = document.getElementById('fontInfoNav');
+        const fontInfoBody = document.getElementById('fontInfoBody');
+
+        function applyFont(fontName) {
+            const font = fonts[fontName];
+            if (!font) return;
+
+            root.style.setProperty('--font-heading', font.heading);
+            root.style.setProperty('--font-nav', font.nav);
+            root.style.setProperty('--font-body', font.body);
+
+            // Update info panel
+            fontInfoHeading.textContent = font.headingName;
+            fontInfoHeading.style.fontFamily = font.heading;
+            fontInfoNav.textContent = font.navName;
+            fontInfoNav.style.fontFamily = font.nav;
+            fontInfoBody.textContent = font.bodyName;
+            fontInfoBody.style.fontFamily = font.body;
+        }
+
+        fontSelect.addEventListener('change', function () {
+            applyFont(this.value);
+        });
+
+        // Tab switching
+        document.querySelectorAll('.services-tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('.services-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

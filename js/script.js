@@ -134,6 +134,67 @@ if (slides.length > 0) {
     startSlideshow();
 }
 
+// ===== Solutions Slider =====
+const solSlides = document.querySelectorAll('.sol-slide');
+const solSliderDots = document.querySelectorAll('.sol-slider-dot');
+const solPrevBtn = document.querySelector('.sol-slider-prev');
+const solNextBtn = document.querySelector('.sol-slider-next');
+let solCurrentSlide = 0;
+let solSlideInterval;
+
+function showSolSlide(index) {
+    if (index >= solSlides.length) index = 0;
+    if (index < 0) index = solSlides.length - 1;
+    solCurrentSlide = index;
+
+    solSlides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === solCurrentSlide) slide.classList.add('active');
+    });
+
+    solSliderDots.forEach((dot, i) => {
+        dot.classList.remove('active');
+        if (i === solCurrentSlide) dot.classList.add('active');
+    });
+}
+
+function nextSolSlide() { showSolSlide(solCurrentSlide + 1); }
+function prevSolSlide() { showSolSlide(solCurrentSlide - 1); }
+
+function startSolSlideshow() {
+    clearInterval(solSlideInterval);
+    solSlideInterval = setInterval(nextSolSlide, 4000);
+}
+
+function stopSolSlideshow() {
+    clearInterval(solSlideInterval);
+}
+
+if (solSlides.length > 0) {
+    if (solNextBtn) {
+        solNextBtn.addEventListener('click', () => {
+            stopSolSlideshow();
+            nextSolSlide();
+            startSolSlideshow();
+        });
+    }
+    if (solPrevBtn) {
+        solPrevBtn.addEventListener('click', () => {
+            stopSolSlideshow();
+            prevSolSlide();
+            startSolSlideshow();
+        });
+    }
+    solSliderDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopSolSlideshow();
+            showSolSlide(index);
+            startSolSlideshow();
+        });
+    });
+    startSolSlideshow();
+}
+
 // ===== Page Hero Background Slider (inner pages) =====
 const pageHeroSlides = document.querySelectorAll('.page-hero-slide');
 if (pageHeroSlides.length > 0) {

@@ -880,6 +880,226 @@ img {
     background-color: var(--primary-color);
 }
 
+/* ===== Solutions Slider Section ===== */
+.sol-hero-slider {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.sol-slider-heading-wrap {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+    text-align: center;
+}
+
+.sol-slider-heading {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.sol-slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sol-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.sol-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.sol-slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sol-slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.35) 45%, transparent 100%);
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+.sol-slide-content {
+    max-width: 550px;
+}
+
+.sol-slide-title {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.sol-slide-desc {
+    font-family: var(--font-primary);
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.sol-slide-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Solutions Slider Arrows */
+.sol-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.sol-slider-prev {
+    left: 15px;
+}
+
+.sol-slider-next {
+    right: 15px;
+}
+
+.sol-slider-arrow:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    backdrop-filter: none;
+}
+
+/* Solutions Slider Dots */
+.sol-slider-dots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.sol-slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.sol-slider-dot.active,
+.sol-slider-dot:hover {
+    background-color: var(--primary-color);
+}
+
+/* Solutions Slider Responsive */
+@media (max-width: 1024px) {
+    .sol-hero-slider {
+        height: 50vh;
+    }
+    .sol-slide-title {
+        font-size: 2rem;
+    }
+    .sol-slide-desc {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sol-hero-slider {
+        height: 45vh;
+        min-height: 350px;
+    }
+    .sol-slide-overlay {
+        background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+        align-items: flex-end;
+        padding: 0 5% 60px;
+    }
+    .sol-slide-title {
+        font-size: 1.6rem;
+    }
+    .sol-slide-desc {
+        font-size: 0.9rem;
+        margin-bottom: 18px;
+    }
+    .sol-slider-heading {
+        font-size: 1.2rem;
+    }
+    .sol-slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sol-hero-slider {
+        height: 40vh;
+        min-height: 300px;
+    }
+    .sol-slide-title {
+        font-size: 1.3rem;
+    }
+    .sol-slide-desc {
+        font-size: 0.85rem;
+    }
+    .sol-slide-buttons .btn-primary,
+    .sol-slide-buttons .btn-secondary {
+        padding: 10px 22px;
+        font-size: 0.85rem;
+    }
+}
+
 /* ===== Services Section ===== */
 .services-section {
     background-color: var(--bg-darker);

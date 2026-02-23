@@ -155,7 +155,7 @@
                     <div class="service-detail-buttons">
                         <a href="contact.html" class="btn-enquire">Enquire Now</a>
                         <a href="#" class="btn-read-more" data-modal="modal-eit-solution">Read More</a>
-                        <a href="#" class="btn-watch-video" data-video-src="videos/Samanvay-AI.mp4" data-gate-time="5"><i class="fas fa-play-circle"></i> Watch Video</a>
+                        <a href="#" class="btn-watch-video" data-video-src="videos/Support Extraction Tool.mp4" data-gate-time="15"><i class="fas fa-play-circle"></i> Watch Video</a>
                     </div>
                 </div>
                 <div class="service-detail-image">
@@ -778,7 +778,11 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
+    // Initialize EmailJS
+    emailjs.init({ publicKey: 'fAl-Us6B3iiiyoXKH' });
+
     // Know More toggle for infographic expandable sections
     function toggleKnowMore(btn){
         var panel=btn.closest('.know-more-wrap').nextElementSibling;
@@ -808,6 +812,7 @@
         var currentGateTime = 5;
         var emailTriggered = false;
         var emailVerified = false;
+        var currentVideoName = '';
 
         var personalDomains = new Set(['gmail.com','yahoo.com','yahoo.in','yahoo.co.in','hotmail.com','outlook.com','live.com','aol.com','icloud.com','me.com','mac.com','mail.com','protonmail.com','proton.me','zoho.com','yandex.com','gmx.com','gmx.net','rediffmail.com','fastmail.com','tutanota.com','inbox.com','msn.com','att.net','comcast.net','verizon.net','sbcglobal.net','cox.net','charter.net']);
 
@@ -819,6 +824,7 @@
                 currentGateTime = parseInt(btn.dataset.gateTime) || 5;
                 emailTriggered = false;
                 emailVerified = false;
+                currentVideoName = btn.closest('.service-detail').querySelector('.service-detail-title').textContent || 'Solution Video';
                 vidGate.classList.remove('active');
 
                 videoSource.src = src;
@@ -865,9 +871,16 @@
                 return;
             }
 
-            // Valid business email — resume video
+            // Valid business email — send via EmailJS then resume video
             emailInput.classList.remove('error');
             emailError.style.display = 'none';
+
+            emailjs.send('service_rk89hkn', 'template_85oyn97', {
+                email: email,
+                video: currentVideoName
+            }).catch(function(){});
+
+            // Resume video immediately (don't wait for email delivery)
             emailOverlay.classList.remove('active');
             emailInput.value = '';
             emailVerified = true;

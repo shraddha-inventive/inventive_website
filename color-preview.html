@@ -542,9 +542,10 @@
 
         /* ===== Client Logos ===== */
         .clients-section {
-            background: var(--bg-main);
+            background: #F8FAFC;
             padding: 30px 0;
             overflow: hidden;
+            transition: background 0.5s ease;
         }
         .clients-track {
             overflow: hidden;
@@ -708,6 +709,16 @@
                     <option value="outfit-nunito">Outfit + Nunito Sans (Friendly Modern)</option>
                     <option value="lexend-manrope">Lexend + Manrope (Crisp Geometric)</option>
                 </optgroup>
+            </select>
+        </div>
+        <div class="theme-bar-left">
+            <span class="theme-bar-label"><i class="fas fa-swatchbook"></i> Logo Bar BG</span>
+            <select class="theme-select" id="clientsBgSelect">
+                <option value="light-steel-blue">Previous — #C5D8E6 Light Steel Blue</option>
+                <option value="dark-navy-gradient" selected>Current — Stats-Counter Style Dark Navy Gradient</option>
+                <option value="deep-navy-solid">Deep Navy Solid — #0F172A</option>
+                <option value="soft-white">Soft White — #F8FAFC</option>
+                <option value="light-sky-blue">Very Light Sky Blue — #E0F2FE</option>
             </select>
         </div>
         <div class="theme-bar-swatches">
@@ -1267,6 +1278,28 @@
 
         fontSelect.addEventListener('change', function () {
             applyFont(this.value);
+        });
+
+        // ===== CLIENTS BACKGROUND SWITCHING =====
+        const clientsBgSelect = document.getElementById('clientsBgSelect');
+        const clientsSection = document.querySelector('.clients-section');
+
+        const clientsBgOptions = {
+            'light-steel-blue': { background: '#C5D8E6', logoFilter: 'grayscale(100%)', logoOpacity: '0.6' },
+            'dark-navy-gradient': { background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', logoFilter: 'grayscale(100%) brightness(1.8)', logoOpacity: '0.7' },
+            'deep-navy-solid': { background: '#0F172A', logoFilter: 'grayscale(100%) brightness(1.8)', logoOpacity: '0.7' },
+            'soft-white': { background: '#F8FAFC', logoFilter: 'grayscale(100%)', logoOpacity: '0.6' },
+            'light-sky-blue': { background: '#E0F2FE', logoFilter: 'grayscale(100%)', logoOpacity: '0.6' }
+        };
+
+        clientsBgSelect.addEventListener('change', function () {
+            const option = clientsBgOptions[this.value];
+            if (!option) return;
+            clientsSection.style.background = option.background;
+            document.querySelectorAll('.clients-slide img').forEach(img => {
+                img.style.filter = option.logoFilter;
+                img.style.opacity = option.logoOpacity;
+            });
         });
 
         // Tab switching

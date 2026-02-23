@@ -117,7 +117,8 @@
                         <div class="form-field">
                             <input type="text" name="company" required placeholder="Company *">
                         </div>
-                        <button type="submit" class="btn-send">Send</button>
+                        <button type="submit" class="btn-send" id="contactSendBtn">Send</button>
+                        <p id="contactFormStatus" style="margin-top:12px;font-size:14px;font-weight:500;display:none"></p>
                     </form>
                 </div>
 
@@ -220,5 +221,71 @@
     </button>
 
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+    // Initialize EmailJS
+    emailjs.init({ publicKey: 'fAl-Us6B3iiiyoXKH' });
+
+    // Contact Form - EmailJS
+    (function(){
+        var form = document.getElementById('contact-form');
+        var statusEl = document.getElementById('contactFormStatus');
+        var sendBtn = document.getElementById('contactSendBtn');
+
+        if(!form) return;
+
+        var personalDomains = new Set(['gmail.com','yahoo.com','yahoo.in','yahoo.co.in','hotmail.com','outlook.com','live.com','aol.com','icloud.com','me.com','mac.com','mail.com','protonmail.com','proton.me','zoho.com','yandex.com','gmx.com','gmx.net','rediffmail.com','fastmail.com','tutanota.com','inbox.com','msn.com','att.net','comcast.net','verizon.net','sbcglobal.net','cox.net','charter.net']);
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            var email = form.email.value.trim();
+            var company = form.company.value.trim();
+
+            if(!email || !company){
+                statusEl.style.display = 'block';
+                statusEl.style.color = '#EF4444';
+                statusEl.textContent = 'Please fill in all required fields.';
+                return;
+            }
+
+            // Business email validation
+            var domain = email.split('@')[1];
+            if(domain && personalDomains.has(domain.toLowerCase())){
+                statusEl.style.display = 'block';
+                statusEl.style.color = '#EF4444';
+                statusEl.textContent = 'Please use your business email (e.g. name@company.com). Personal emails are not accepted.';
+                return;
+            }
+
+            // Disable button while sending
+            sendBtn.disabled = true;
+            sendBtn.textContent = 'Sending...';
+            statusEl.style.display = 'none';
+
+            emailjs.send('service_rk89hkn', 'template_chwe5p8', {
+                service: form.service.value || 'Not specified',
+                email: email,
+                message: form.message.value || 'No message',
+                company: company
+            })
+            .then(function(){
+                statusEl.style.display = 'block';
+                statusEl.style.color = '#10B981';
+                statusEl.textContent = 'Thank you! Your message has been sent successfully.';
+                form.reset();
+                sendBtn.disabled = false;
+                sendBtn.textContent = 'Send';
+            })
+            .catch(function(){
+                statusEl.style.display = 'block';
+                statusEl.style.color = '#EF4444';
+                statusEl.textContent = 'Something went wrong. Please try again.';
+                sendBtn.disabled = false;
+                sendBtn.textContent = 'Send';
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
